@@ -1,1 +1,13 @@
 @import 'tailwindcss';
+@font-face {
+    font-family: 'Trajan-Pro';
+    src: url('/Trajan-Pro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Apply font globally or to specific elements */
+body {
+    font-family: 'Trajan-Pro', sans-serif;
+}
