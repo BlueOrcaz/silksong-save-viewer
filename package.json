@@ -1,0 +1,32 @@
+{
+	"name": "my-app",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.5",
+		"@eslint/js": "^9.22.0",
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/kit": "^2.22.0",
+		"@sveltejs/vite-plugin-svelte": "^6.0.0",
+		"@tailwindcss/forms": "^0.5.9",
+		"@tailwindcss/vite": "^4.0.0",
+		"@types/node": "^22",
+		"eslint": "^9.22.0",
+		"eslint-plugin-svelte": "^3.0.0",
+		"globals": "^16.0.0",
+		"svelte": "^5.0.0",
+		"tailwindcss": "^4.0.0",
+		"vite": "^7.0.4"
+	},
+	"dependencies": {
+		"aes-js": "^3.1.2"
+	}
+}
