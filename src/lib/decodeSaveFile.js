@@ -68,7 +68,7 @@ export function decodeFile(arrayBuffer) {
 
         let decodedString = new TextDecoder().decode(inputArrayBuffer);
         const parsed = JSON.parse(decodedString);
-        return parsed.playerData;
+        return parsed;
     } catch (error) {
         console.error("File cannot be decoded.", error);
         return `Error decoding file: ${error}`;

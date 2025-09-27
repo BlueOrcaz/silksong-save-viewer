@@ -15,6 +15,5 @@
 </script>
 
 <div>
-    <label for="file-upload">Upload .dat file:</label>
-    <input id="file-upload" type="file" on:change={handleFileChange} />
+    <input type="file" on:change={handleFileChange} />
 </div>
