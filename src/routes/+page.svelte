@@ -3,15 +3,21 @@
 
   import FileUpload from "$lib/FileUpload.svelte";
   import { decodeFile } from "$lib/decodeSaveFile";
+
+  import Bosses from "$lib/Bosses.svelte";
+
   let decodedResult = null;
 
-  // default
-  let timePlayed = "0 h 00 min 00 sec"; // default
+
+
+  // default values on loading the website
+  let timePlayed = "0 h 00 min 00 sec"; 
   let maskShards = 5;
   let maxSilk = 0;
   let silkHearts = 0;
   let rosaries = 0;
   let shellShards = 0;
+  let saveVersion = "0.0.0.0";
 
   async function handleFile(event) {
     const arrayBuffer = event.detail;
@@ -20,7 +26,7 @@
       // playtime
       let playTimeInSeconds = Math.floor(decodedResult.playerData.playTime);
       timePlayed = formatTime(playTimeInSeconds);
-
+      saveVersion = decodedResult.playerData.version;
       maskShards = decodedResult.playerData.maxHealth;
       maxSilk = decodedResult.playerData.silkMax;
       silkHearts = decodedResult.playerData.silkRegenMax;
@@ -28,7 +34,7 @@
       shellShards = decodedResult.playerData.ShellShards;
     }
   }
-
+  
   function formatTime(seconds) {
     const date = new Date(0); // Initialize with the epoch (1970-01-01)
     date.setSeconds(seconds); // Set the seconds from the decoded playtime
@@ -51,11 +57,11 @@
       <FileUpload on:fileLoaded={handleFile} />
     </div>
 
-    <div class="flex justify-center items-center">
+    <div class="flex flex-col justify-center items-center">
       <div class="grid grid-cols-2 gap-10 w-full max-w-3xl p-10 text-xl">
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Save Info:</h1>
         <p class="font-bold">Save Version:</p>
-        <p>0.0.0.0</p>
+        <p>{saveVersion}</p>
         <p>Time Played:</p>
         <p>{timePlayed}</p>
         <p>Mask Shards:</p>
@@ -67,8 +73,12 @@
         <p>Shell Shards:</p>
         <p>{shellShards}</p>
         <p>Silk Hearts:</p>
-        <p>0</p>
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Completed Bosses</h1>
+        <p>{silkHearts}</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-10 w-full max-w-3xl p-10 text-xl">
+        <Bosses playerData={decodedResult?.playerData ?? {}} />
+
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Unlocked Crests</h1>
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Tools</h1>
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Nail Upgrades</h1>
