@@ -4,7 +4,11 @@
   import FileUpload from "$lib/FileUpload.svelte";
   import { decodeFile } from "$lib/decodeSaveFile";
 
+  
   import Bosses from "$lib/Bosses.svelte";
+  import Crests from "$lib/Crests.svelte";
+  import NeedleUpgrade from "$lib/needleUpgrade.svelte";
+  import AreaMaps from "$lib/areaMaps.svelte";
 
   let decodedResult = null;
 
@@ -76,14 +80,17 @@
         <p>{silkHearts}</p>
       </div>
 
-      <div class="grid grid-cols-1 gap-10 w-full max-w-3xl p-10 text-xl">
+      <div class="grid grid-cols-2 gap-10 w-full max-w-3xl p-10 text-xl">
         <Bosses playerData={decodedResult?.playerData ?? {}} />
+        <Crests playerData={decodedResult?.playerData ?? {}} />
+        <NeedleUpgrade playerData={decodedResult?.playerData ?? {}} />
+        <AreaMaps playerData={decodedResult?.playerData ?? {}} />
 
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Unlocked Crests</h1>
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Tools</h1>
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Nail Upgrades</h1>
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Spool Fragments</h1>
       </div>
+
     </div>
   </div>
 </div>
