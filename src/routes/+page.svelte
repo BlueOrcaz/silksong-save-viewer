@@ -9,6 +9,7 @@
   import Crests from "$lib/Crests.svelte";
   import NeedleUpgrade from "$lib/needleUpgrade.svelte";
   import AreaMaps from "$lib/areaMaps.svelte";
+  import Tools from "$lib/tools.svelte";
 
   let decodedResult = null;
 
@@ -85,6 +86,7 @@
         <Crests playerData={decodedResult?.playerData ?? {}} />
         <NeedleUpgrade playerData={decodedResult?.playerData ?? {}} />
         <AreaMaps playerData={decodedResult?.playerData ?? {}} />
+        <Tools playerData={decodedResult?.playerData ?? {}} />
 
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Tools</h1>
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Nail Upgrades</h1>

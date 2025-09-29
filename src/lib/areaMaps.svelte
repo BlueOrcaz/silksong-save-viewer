@@ -10,3 +10,5 @@
         <p>{playerData?.[area.flag] ? '✅' : '❌'} {area.name}</p>
    {/each}
 </div>
+
+
