@@ -1,6 +1,6 @@
 <script>
     export let playerData = {};
-    import { mapList } from "./mapData";
+    import { mapList } from "$lib/gameData";
 </script>
 
 <div>

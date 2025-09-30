@@ -1,7 +1,7 @@
 <script>
     export let playerData = {};
     
-    import { needleUpgradeList } from "./needleUpgradeData";
+    import { needleUpgradeList } from "$lib/gameData";
 </script>
 
 <div>

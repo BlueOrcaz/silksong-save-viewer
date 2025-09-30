@@ -1,22 +1,19 @@
 <script>
   import background from "../static/Background.jpg";
 
-  import FileUpload from "$lib/FileUpload.svelte";
+  import FileUpload from "$lib/components/FileUpload.svelte";
   import { decodeFile } from "$lib/decodeSaveFile";
 
-  
-  import Bosses from "$lib/Bosses.svelte";
-  import Crests from "$lib/Crests.svelte";
-  import NeedleUpgrade from "$lib/needleUpgrade.svelte";
-  import AreaMaps from "$lib/areaMaps.svelte";
-  import Tools from "$lib/tools.svelte";
+  import Bosses from "$lib/components/Bosses.svelte";
+  import Crests from "$lib/components/Crests.svelte";
+  import NeedleUpgrade from "$lib/components/NeedleUpgrade.svelte";
+  import AreaMaps from "$lib/components/AreaMaps.svelte";
+  import Tools from "$lib/components/Tools.svelte";
 
   let decodedResult = null;
 
-
-
   // default values on loading the website
-  let timePlayed = "0 h 00 min 00 sec"; 
+  let timePlayed = "0 h 00 min 00 sec";
   let maskShards = 5;
   let maxSilk = 0;
   let silkHearts = 0;
@@ -29,8 +26,7 @@
     decodedResult = await decodeFile(arrayBuffer);
     if (decodedResult) {
       // playtime
-      let playTimeInSeconds = Math.floor(decodedResult.playerData.playTime);
-      timePlayed = formatTime(playTimeInSeconds);
+      timePlayed = formatTime(Math.floor(decodedResult.playerData.playTime));
       saveVersion = decodedResult.playerData.version;
       maskShards = decodedResult.playerData.maxHealth;
       maxSilk = decodedResult.playerData.silkMax;
@@ -39,16 +35,13 @@
       shellShards = decodedResult.playerData.ShellShards;
     }
   }
-  
-  function formatTime(seconds) {
-    const date = new Date(0); // Initialize with the epoch (1970-01-01)
-    date.setSeconds(seconds); // Set the seconds from the decoded playtime
 
-    const hours = String(date.getUTCHours()).padStart(2, "0");
-    const minutes = String(date.getUTCMinutes()).padStart(2, "0");
-    const secondsFormatted = String(date.getUTCSeconds()).padStart(2, "0");
+  function formatTime(saveDataSeconds) {
+    const hours = Math.floor(saveDataSeconds / 3600);
+    const minutes = Math.floor((saveDataSeconds % 3600) / 60);
+    const seconds = saveDataSeconds % 60;
 
-    return `${hours} h ${minutes} min ${secondsFormatted} sec`;
+    return `${hours} h ${minutes} min ${seconds} sec`;
   }
 </script>
 
@@ -64,7 +57,9 @@
 
     <div class="flex flex-col justify-center items-center">
       <div class="grid grid-cols-2 gap-10 w-full max-w-3xl p-10 text-xl">
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Save Info:</h1>
+        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">
+          Save Info:
+        </h1>
         <p class="font-bold">Save Version:</p>
         <p>{saveVersion}</p>
         <p>Time Played:</p>
@@ -81,18 +76,13 @@
         <p>{silkHearts}</p>
       </div>
 
-      <div class="grid grid-cols-2 gap-10 w-full max-w-3xl p-10 text-xl">
+      <div class="gap-10 w-full max-w-3xl p-10 text-xl">
         <Bosses playerData={decodedResult?.playerData ?? {}} />
         <Crests playerData={decodedResult?.playerData ?? {}} />
         <NeedleUpgrade playerData={decodedResult?.playerData ?? {}} />
         <AreaMaps playerData={decodedResult?.playerData ?? {}} />
         <Tools playerData={decodedResult?.playerData ?? {}} />
-
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Tools</h1>
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Nail Upgrades</h1>
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Spool Fragments</h1>
       </div>
-
     </div>
   </div>
 </div>

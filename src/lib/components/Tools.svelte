@@ -1,5 +1,5 @@
 <script>
-    import { ToolList } from "./toolData";
+    import { ToolList } from "$lib/gameData";
     export let playerData = {};
 
     function isToolUnlocked(playerData, toolName) {
