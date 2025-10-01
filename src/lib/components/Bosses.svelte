@@ -5,15 +5,22 @@
   function isBossDefeated(boss, playerData) {
     if (!playerData || !boss.flag) return false;
 
-
     if (boss.flagType === "boolean") {
       return playerData?.[boss.flag] === true;
     }
 
-    
     if (boss.flagType === "journal") {
-        const journalList = playerData?.EnemyJournalKillData?.list ?? [];
-        return journalList.some(entry => entry.Name === boss.flag && entry.Record?.Kills > 0);
+      const journalList = playerData?.EnemyJournalKillData?.list ?? [];
+      return journalList.some(
+        (entry) => entry.Name === boss.flag && entry.Record?.Kills > 0,
+      );
+    }
+
+    if (boss.flagType === "collectable") {
+      const collectableList = playerData?.Collectables?.savedData ?? [];
+      return collectableList.some(
+        (entry) => entry.Name === boss.flag && entry.Data?.Amount >= 1,
+      );
     }
 
     return false;
@@ -21,7 +28,9 @@
 </script>
 
 <div>
-  <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Completed Bosses</h1>
+  <h1 class="col-span-2 text-2xl font-bold text-center mt-4">
+    Completed Bosses
+  </h1>
 
   {#each bossList as boss}
     <p>

@@ -9,6 +9,11 @@
   import NeedleUpgrade from "$lib/components/NeedleUpgrade.svelte";
   import AreaMaps from "$lib/components/AreaMaps.svelte";
   import Tools from "$lib/components/Tools.svelte";
+  import BellwayStations from "$lib/components/BellwayStations.svelte";
+  import VentricaStations from "$lib/components/VentricaStations.svelte";
+  import CraftingKitUpgrade from "$lib/components/CraftingKitUpgrade.svelte";
+  import SpoolFragments from "$lib/components/SpoolFragments.svelte";
+  import Quests from "$lib/components/Quests.svelte";
 
   let decodedResult = null;
 
@@ -82,6 +87,11 @@
         <NeedleUpgrade playerData={decodedResult?.playerData ?? {}} />
         <AreaMaps playerData={decodedResult?.playerData ?? {}} />
         <Tools playerData={decodedResult?.playerData ?? {}} />
+        <BellwayStations playerData={decodedResult?.playerData ?? {}} />
+        <VentricaStations playerData={decodedResult?.playerData ?? {}} />
+        <CraftingKitUpgrade playerData={decodedResult?.playerData ?? {}} />
+        <SpoolFragments playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
+        <Quests playerData={decodedResult?.playerData ?? {}} />
       </div>
     </div>
   </div>
