@@ -152,7 +152,7 @@ export const ToolList = [
     { name: "Conchcutter", location: "", saveName: "Conch Drill" },
     { name: "Silkshot (Forge Daughter)", location: "", saveName: "WebShot Forge" },
     { name: "Silkshot (Twelfth Architect)", location: "", saveName: "WebShot Architect" },
-    { name: "Silkshot (Mount Fay)", location: "", saveName: "WebShot Weaver" },
+    { name: "Silkshot (Mount Fay)", location: "", saveName: "WebShot" },
     { name: "Delver's Drill", location: "", saveName: "Screw Attack" },
     { name: "Cogwork Wheel", location: "", saveName: "Cogwork Saw" },
     { name: "Cogfly", location: "", saveName: "Cogwork Flier" },
@@ -229,7 +229,7 @@ export const ventricaStationList = [
 ];
 
 
-export const toolPouchList = [
+export const toolPouchList = [ // wip
     { name: "Tool Pouch #1", location: "Purchase from Mort for 220 Rosaries in Far Fields", flag: "PurchasedPilgrimsRestToolPouch", flagType: "purchase" },
     { name: "Tool Pouch #2", location: "Complete Loddie's Minigame in The Marrow/Pick up in Act 3", flag: "", flagType: "quest" },
     { name: "Tool Pouch #3", location: "Complete the Bugs of Pharloom wish.", flag: "Journal", flagType: "quest" },
@@ -244,26 +244,26 @@ export const craftingKitUpgradeList = [
 ];
 
 export const memoryLocketList = [
-    { name: "#1 Moss Grotto", location: "Completing the Volatile Flintbeetle Task gives you a Memory Locket.", flag: "Rock Rollers", flagType: "quest" },
-    { name: "#2 The Marrow", location: "", flag: "", flagType: "" }, // Collectable Item Pickup Locket
-    { name: "#3 Far Fields (1/2)", location: "", flag: "PurchasedPilgrimsRestMemoryLocket", flagType: "purchase" },
-    { name: "#4 Far Fields (2/2)", location: "", flag: "", flagType: "" },
-    { name: "#5 Greymoor (1/2)", location: "", flag: "", flagType: "" },
-    { name: "#6 Greymoor (2/2)", location: "", flag: "", flagType: "" },
-    { name: "#7 Hunter's March", location: "", flag: "", flagType: "" },
-    { name: "#8 Bellhart (1/2)", location: "", flag: "PurchasedBellTownMemoryLocket", flagType: "purchase" },
-    { name: "#9 Bellhart (2/2)", location: "", flag: "", flagType: "" },
-    { name: "#10 Blasted Steps", location: "", flag: "", flagType: "" },
-    { name: "#11 Wormways", location: "", flag: "", flagType: "" },
-    { name: "#12 The Slab", location: "", flag: "", flagType: "" },
-    { name: "#13 Sands of Karak", location: "", flag: "", flagType: "" },
-    { name: "#14 Memorium", location: "", flag: "", flagType: "" },
-    { name: "#15 Bilewater (1/2)", location: "", flag: "", flagType: "" },
-    { name: "#16 Bilewater (2/2)", location: "", flag: "", flagType: "" },
-    { name: "#17 Whispering Vaults", location: "", flag: "", flagType: "" },
-    { name: "#18 Underworks", location: "", flag: "", flagType: "" },
-    { name: "#19 Deep Docks", location: "", flag: "", flagType: "" },
-    { name: "#20 Choral Chambers", location: "", flag: "", flagType: "" },
+    { name: "#1 Moss Grotto", location: "", flag: "Rock Rollers", flagType: "quest" },
+    { name: "#2 The Marrow", location: "", flag: "Bone_18", flagType: "scene" }, // Collectable Item Pickup
+    { name: "#3 Far Fields (1/2)", location: "", flag: "PurchasedPilgrimsRestMemoryLocket", flagType: "boolean" },
+    { name: "#4 Far Fields (2/2)", location: "", flag: "Bone_East_25", flagType: "scene" },
+    { name: "#5 Greymoor (1/2)", location: "", flag: "Greymoor_16", flagType: "scene" },
+    { name: "#6 Greymoor (2/2)", location: "", flag: "Halfway_01", flagType: "scene" },
+    { name: "#7 Hunter's March", location: "", flag: "Ant_20", flagType: "scene" },
+    { name: "#8 Bellhart (1/2)", location: "", flag: "PurchasedBelltownMemoryLocket", flagType: "boolean" },
+    { name: "#9 Bellhart (2/2)", location: "", flag: "Belltown", flagType: "scene" },
+    { name: "#10 Blasted Steps", location: "", flag: "Coral_02", flagType: "scene" }, // Collectable Item Pickup (1)
+    { name: "#11 Wormways", location: "", flag: "Crawl_09", flagType: "scene" },
+    { name: "#12 The Slab", location: "", flag: "Slab_Cell_Quiet", flagType: "scene" },
+    { name: "#13 Sands of Karak", location: "", flag: "Coral_23", flagType: "scene" },
+    { name: "#14 Memorium", location: "", flag: "Arborium_05", flagType: "scene" },
+    { name: "#15 Bilewater (1/2)", location: "", flag: "Shadow_20", flagType: "scene" }, // Collectable Item Pickup (1) OR Collectable Item Pickup
+    { name: "#16 Bilewater (2/2)", location: "", flag: "Shadow_27", flagType: "scene" }, // Sack Corpse Pickup
+    { name: "#17 Whispering Vaults", location: "", flag: "Library_08", flagType: "scene" },
+    { name: "#18 Underworks", location: "", flag: "Under_08", flagType: "scene" },
+    { name: "#19 Deep Docks", location: "", flag: "Dock_13", flagType: "scene" },
+    { name: "#20 Choral Chambers", location: "", flag: "Bellway_City", flagType: "scene" },
 ];
 
 export const keysList = [
@@ -360,8 +360,6 @@ export const questList = [
     { name: "Hero's Call", location: "", saveName: "Garmond Black Threaded" },
     { name: "Final Audience", location: "", saveName: "Song Knight" },
     { name: "Roach Guts", location: "", saveName: "Roach Killing" },
-    { name: "Pale Monarch [Act 2]", location: "", saveName: "Citadel Ascent Silk Defeat" },
-    { name: "Last Dive [Act 3]", location: "", saveName: "Black Thread Pt6 Flower" },
     { name: "Bone Bottom Supplies", location: "", saveName: "Courier Delivery Bonebottom" },
     { name: "Songclave Supplies", location: "", saveName: "Courier Delivery Songclave" },
     { name: "Liquid Lacquer", location: "", saveName: "Courier Delivery Mask Maker" },
@@ -369,10 +367,33 @@ export const questList = [
     { name: "Survivor Camp Supplies", location: "", saveName: "Courier Delivery Fixer" },
     { name: "Queen's Egg", location: "", saveName: "Courier Delivery Dustpens Slave" },
     { name: "Pilgrim's Rest Supplies", location: "", saveName: "Courier Delivery Pilgrims Rest" },
+
+
+    { name: "Pale Monarch [Act 2]", location: "", saveName: "Citadel Ascent Silk Defeat" },
+    { name: "Last Dive [Act 3]", location: "", saveName: "Black Thread Pt6 Flower" },
 ];
 
 export const maskShardList = [
-
+    { name: "#1 Moss Grotto", location: "", flag: "PurchasedBonebottomHeartPiece", flagType: "boolean" },
+    { name: "#2 Far Fields (1/3)", location: "", flag: "Bone_East_20", flagType: "scene" },
+    { name: "#3 Far Fields (2/3)", location: "", flag: "Bone_East_LavaChallenge", flagType: "scene" }, // Heart piece (1)
+    { name: "#4 Far Fields (3/3)", location: "", flag: "Sprintmaster Race", flagType: "quest" },
+    { name: "#5 Deep Docks", location: "", flag: "Dock_08", flagType: "scene" },
+    { name: "#6 Wormways", location: "", flag: "Crawl_02", flagType: "scene" },
+    { name: "#7 Bellhart (1/3)", location: "", flag: "Beastfly Hunt", flagType: "quest" },
+    { name: "#8 Bellhart (2/3)", location: "", flag: "Ant Trapper", flagType: "quest" },
+    { name: "#9 Bellhart (3/3)", location: "", flag: "Destroy Thread Cores", flagType: "quest" },
+    { name: "#10 Shellwood", location: "", flag: "Shellwood_14", flagType: "scene" },
+    { name: "#11 Weavenest Atla", location: "", flag: "Weave_05b", flagType: "scene" },
+    { name: "#12 Blasted Steps", location: "", flag: "Coral_19b", flagType: "scene" },
+    { name: "#13 Choral Chambers", location: "", flag: "MerchantEnclaveSocket", flagType: "boolean" },
+    { name: "#14 Cogwork Core", location: "", flag: "Song_09", flagType: "scene" },
+    { name: "#15 The Slab", location: "", flag: "Slab_17", flagType: "scene" },
+    { name: "#16 Mount Fay (1/2)", location: "", flag: "Peak_04c", flagType: "scene" },
+    { name: "#17 Mount Fay (2/2)", location: "", flag: "Peak_06", flagType: "scene" },
+    { name: "#18 Whispering Vaults", location: "", flag: "Library_05", flagType: "scene" },
+    { name: "#19 Bilewater", location: "", flag: "Shadow_13", flagType: "scene" },
+    { name: "#20 Wisp Thicket", location: "", flag: "Wisp_07", flagType: "scene" },
 ];
 
 export const paleOilList = [

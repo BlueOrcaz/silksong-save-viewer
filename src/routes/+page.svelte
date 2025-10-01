@@ -14,6 +14,8 @@
   import CraftingKitUpgrade from "$lib/components/CraftingKitUpgrade.svelte";
   import SpoolFragments from "$lib/components/SpoolFragments.svelte";
   import Quests from "$lib/components/Quests.svelte";
+  import MaskShards from "$lib/components/MaskShards.svelte";
+  import MemoryLockets from "$lib/components/MemoryLockets.svelte";
 
   let decodedResult = null;
 
@@ -90,8 +92,11 @@
         <BellwayStations playerData={decodedResult?.playerData ?? {}} />
         <VentricaStations playerData={decodedResult?.playerData ?? {}} />
         <CraftingKitUpgrade playerData={decodedResult?.playerData ?? {}} />
+        <MaskShards playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
         <SpoolFragments playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
         <Quests playerData={decodedResult?.playerData ?? {}} />
+        <MemoryLockets playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
+
       </div>
     </div>
   </div>
