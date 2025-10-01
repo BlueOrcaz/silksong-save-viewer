@@ -96,7 +96,6 @@
         <SpoolFragments playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
         <Quests playerData={decodedResult?.playerData ?? {}} />
         <MemoryLockets playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
-
       </div>
     </div>
   </div>
