@@ -370,3 +370,15 @@ export const questList = [
     { name: "Queen's Egg", location: "", saveName: "Courier Delivery Dustpens Slave" },
     { name: "Pilgrim's Rest Supplies", location: "", saveName: "Courier Delivery Pilgrims Rest" },
 ];
+
+export const maskShardList = [
+
+];
+
+export const paleOilList = [
+
+];
+
+export const fleaList = [
+
+];
