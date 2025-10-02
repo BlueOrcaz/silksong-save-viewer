@@ -19,6 +19,7 @@
   import PaleOil from "$lib/components/PaleOil.svelte";
   import FleaLocations from "$lib/components/FleaLocations.svelte";
   import ToolPouches from "$lib/components/ToolPouches.svelte";
+  import SimpleKeys from "$lib/components/SimpleKeys.svelte";
 
   let decodedResult = null;
 
@@ -90,21 +91,22 @@
       </div>
 
       <div class="gap-10 w-full max-w-3xl p-10 text-xl">
-        <Bosses playerData={decodedResult?.playerData ?? {}} />
-        <Crests playerData={decodedResult?.playerData ?? {}} />
-        <NeedleUpgrade playerData={decodedResult?.playerData ?? {}} />
-        <PaleOil playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
-        <AreaMaps playerData={decodedResult?.playerData ?? {}} />
-        <Tools playerData={decodedResult?.playerData ?? {}} />
-        <BellwayStations playerData={decodedResult?.playerData ?? {}} />
-        <VentricaStations playerData={decodedResult?.playerData ?? {}} />
-        <CraftingKitUpgrade playerData={decodedResult?.playerData ?? {}} />
-        <MaskShards playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
-        <SpoolFragments playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
-        <Quests playerData={decodedResult?.playerData ?? {}} />
-        <MemoryLockets playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
-        <FleaLocations playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
-        <ToolPouches playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
+        <Bosses playerData={playerData} />
+        <Crests playerData={playerData} />
+        <NeedleUpgrade playerData={playerData} />
+        <PaleOil playerData={playerData} sceneData={sceneData} />
+        <AreaMaps playerData={playerData} />
+        <Tools playerData={playerData} />
+        <BellwayStations playerData={playerData} />
+        <VentricaStations playerData={playerData} />
+        <CraftingKitUpgrade playerData={playerData} />
+        <MaskShards playerData={playerData} sceneData={sceneData} />
+        <SpoolFragments playerData={playerData} sceneData={sceneData} />
+        <Quests playerData={playerData} />
+        <MemoryLockets playerData={playerData} sceneData={sceneData} />
+        <FleaLocations playerData={playerData} sceneData={sceneData} />
+        <ToolPouches playerData={playerData} sceneData={sceneData} />
+        <SimpleKeys playerData={playerData} sceneData={sceneData} />
       </div>
     </div>
   </div>

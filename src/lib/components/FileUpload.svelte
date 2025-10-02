@@ -15,8 +15,8 @@
 
     let showPopover = false;
     let timeout;
-    let fileExplorerText =
-        "%USERPROFILE%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight\\";
+    let fileExplorerText = "%USERPROFILE%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong\\";
+
 
     function copyPath() {
         navigator.clipboard.writeText(fileExplorerText).then(() => {
@@ -36,7 +36,7 @@
             class="text-center mb-3 border rounded-lg px-6 py-3 transition transform hover:scale-105 active:scale-95"
         >
             <button on:click={copyPath} class="relative">
-                %USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight\
+                %USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong\(Your Steam ID)
             </button>
 
             {#if showPopover}

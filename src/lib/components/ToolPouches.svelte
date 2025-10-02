@@ -10,7 +10,6 @@
 
         switch (pouch.flagType) {
             case "purchase":
-
                 return playerData?.[pouch.flag] === true;
             case "quest":
                 const questList = playerData?.QuestCompletionData?.savedData ?? [];
@@ -18,7 +17,6 @@
                     (entry) =>
                         entry.Name === pouch.flag && entry.Data?.IsCompleted,
                 );
-
             case "scene": // only accounted for if you did it in Act 3
                 const sceneList = sceneData?.persistentBools?.serializedList ?? [];
                 return sceneList.some(
@@ -27,7 +25,6 @@
                         entry.ID === "Ladybug Craft Pickup" &&
                         entry.Value === true,
                 );
-
             case "flea":
                 return playerData?.CaravanTroupeLocation == 3;
             default:

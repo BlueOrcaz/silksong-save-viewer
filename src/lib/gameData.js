@@ -266,11 +266,11 @@ export const memoryLocketList = [
     { name: "#20 Choral Chambers", location: "", flag: "Bellway_City", flagType: "scene" },
 ];
 
-export const keysList = [
-    { name: "Simple Key #1", location: "Bone Bottom, Moss Grotto: Purchase from Pebb for 500 Rosaries.", flag: "PurchasedBonebottomFaithToken" },
-    { name: "Simple Key #2", location: "Songclave, Choral Chambers: Purchase from Jubilana for 650 Rosaries.", flag: "MerchantEnclaveSimpleKey" },
-    { name: "Simple Key #3", location: "Sinner's Road: Obtain from the Roachkeeper enemy on top of Sinner's Road", flag: "" },
-    { name: "Simple Key #4", location: "Sands of Karak: Obtain from the sitting corpse on the rightmost bench.", flag: "" }
+export const simpleKeysList = [
+    { name: "Simple Key #1", location: "Bone Bottom, Moss Grotto: Purchase from Pebb for 500 Rosaries.", flag: "PurchasedBonebottomFaithToken", flagType: "boolean" }, //true
+    { name: "Simple Key #2", location: "Songclave, Choral Chambers: Purchase from Jubilana for 650 Rosaries.", flag: "MerchantEnclaveSimpleKey", flagType: "boolean" }, // true
+    { name: "Simple Key #3", location: "Sinner's Road: Obtain from the Roachkeeper enemy on top of Sinner's Road", flag: "Dust_06", flagType: "scene" }, // ID is Collectable Item SimpleKey
+    { name: "Simple Key #4", location: "Sands of Karak: Obtain from the sitting corpse on the rightmost bench.", flag: "Bellshrine_Coral", flagType: "scene" } // ID is Collectable Item Pickup
 ];
 
 export const spoolFragmentList = [
