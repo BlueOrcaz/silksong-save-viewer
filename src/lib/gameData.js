@@ -11,7 +11,7 @@ export const abilityList = [
 ];
 
 export const bossList = [
-    { name: "Moss Mother (1/2)", location: "Moss Grotto", flag: "defeatedMossMother", flagType: "boolean" },
+    { name: "Moss Mother (1/2)", location: "476904", flag: "defeatedMossMother", flagType: "boolean" },
     { name: "Bell Beast", location: "Test", flag: "defeatedBellBeast", flagType: "boolean" },
     { name: "Lace (1/2)", location: "", flag: "defeatedLace1", flagType: "boolean" },
     { name: "Fourth Chorus", location: "", flag: "defeatedSongGolem", flagType: "boolean" },
@@ -78,7 +78,7 @@ export const crestList = [
     { name: "Hunter's Crest", location: "", flag: "Hunter" },
     { name: "Hunter's Crest (Upgrade)", location: "", flag: "Hunter_v2" },
     { name: "Hunter's Crest (Final Upgrade)", location: "", flag: "Hunter_v3" },
-    { name: "Reaper Crest", location: "", flag: "Reaper" },
+    { name: "Reaper Crest", location: "478156", flag: "Reaper" },
     { name: "Wanderer Crest", location: "", flag: "Wanderer" },
     { name: "Beast Crest", location: "", flag: "Warrior" },
     { name: "Witch Crest", location: "", flag: "Witch" },

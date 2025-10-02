@@ -1,6 +1,8 @@
 <script>
+    import { getLocationUrl } from "$lib/utils";
     import { craftingKitUpgradeList } from "$lib/gameData";
     export let playerData = {};
+
 
     function unlockedCraftingKit(kit, playerData) {
         if (!playerData || !kit.flag) return false;
@@ -18,17 +20,34 @@
     }
 </script>
 
-<div>
-  <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Unlocked Crafting Kits</h1>
+<div class="flex justify-center items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
+        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Unlocked Crafting Kits</h1>
 
-    {#each craftingKitUpgradeList as kit}
-        <p>
-            {#if unlockedCraftingKit(kit, playerData)}
-                ✅
-            {:else}
-                ❌
-            {/if}
-            {kit.name} Location: {kit.location || "Unknown/WIP"}
-        </p>
-    {/each}
+        {#each craftingKitUpgradeList as kit}
+            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700">
+                <span class="flex items-center gap-2">
+                    {#if unlockedCraftingKit(kit, playerData)}
+                        <span class="text-green-400 text-lg">✅</span>
+                    {:else}
+                        <span class="text-red-400 text-lg">❌</span>
+                    {/if}
+                    <span class="font-medium">{kit.name}</span>   
+                </span>
+
+                {#if kit.location}
+                    <a
+                        href={getLocationUrl(kit.location)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-xs text-blue-400 hover:underline"
+                    >
+                        View Map
+                    </a>
+                {:else}
+                    <span class="text-xs text-gray-400 italic">Unknown</span>
+                {/if}
+            </div>
+        {/each}
+    </div>
 </div>
