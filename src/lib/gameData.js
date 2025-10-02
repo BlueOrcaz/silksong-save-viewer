@@ -397,9 +397,40 @@ export const maskShardList = [
 ];
 
 export const paleOilList = [
-
+    { name: "Pale Oil #1", location: "", flag: "Library_03", flagType: "scene" },
+    { name: "Pale Oil #2", location: "", flag: "Great Gourmand", flagType: "quest" },
+    { name: "Pale Oil #3", location: "" , flag: "Flea Games", flagType: "quest" },
 ];
 
-export const fleaList = [
-
+export const fleaList = [ 
+    { name: "#1 The Marrow", location: " ", flag: "SavedFlea_Bone_06", flagType: "boolean" },
+    { name: "#2 Deep Docks (1/3)", location: " ", flag: "SavedFlea_Dock_16", flagType: "boolean" },
+    { name: "#3 Deep Docks (2/3)", location: " ", flag: "SavedFlea_Bone_East_05", flagType: "boolean" },
+    { name: "#4 Deep Docks (3/3)", location: " ", flag: "SavedFlea_Dock_03d", flagType: "boolean" },
+    { name: "#5 Far Fields (1/2)", location: " ", flag: "SavedFlea_Bone_East_17b", flagType: "boolean" },
+    { name: "#6 Far Fields (2/2)", location: " ", flag: "SavedFlea_Bone_East_10_Church", flagType: "boolean" },
+    { name: "#7 Hunters March", location: " ", flag: "SavedFlea_Ant_03", flagType: "boolean" },
+    { name: "#8 Greymoor (1/2)", location: " ", flag: "SavedFlea_Greymoor_15b", flagType: "boolean" },
+    { name: "#9 Greymoor (2/2)", location: " ", flag: "SavedFlea_Greymoor_06", flagType: "boolean" },
+    { name: "#10 Sinner's Road", location: " ", flag: "SavedFlea_Dust_12", flagType: "boolean" },
+    { name: "#11 Whispering Vaults", location: " ", flag: "SavedFlea_Library_01", flagType: "boolean" },
+    { name: "#12 Bilewater (1/3)", location: " ", flag: "SavedFlea_Dust_09", flagType: "boolean" },
+    { name: "#13 Bilewater (2/3)", location: " ", flag: "SavedFlea_Shadow_10", flagType: "boolean" },
+    { name: "#14 Bilewater (3/3)", location: " ", flag: "SavedFlea_Shadow_28", flagType: "boolean" },
+    { name: "#15 Underworks (1/2)", location: "", flag: "SavedFlea_Under_21", flagType: "boolean" },
+    { name: "#16 Underworks (2/2)", location: "", flag: "SavedFlea_Under_23", flagType: "boolean" },
+    { name: "#17 Blasted Steps", location: " ", flag: "SavedFlea_Coral_35", flagType: "boolean" },
+    { name: "#18 Bellhart", location: " ", flag: "SavedFlea_Belltown_04", flagType: "boolean" },
+    { name: "#19 Wormways", location: " ", flag: "SavedFlea_Crawl_06", flagType: "boolean" },
+    { name: "#20 Coral Chambers (1/2)", location: " ", flag: "SavedFlea_Song_11", flagType: "boolean" },
+    { name: "#21 Coral Chambers (2/2)", location: " ", flag: "SavedFlea_Song_14", flagType: "boolean" },
+    { name: "#22 The Slab (1/2)", location: " ", flag: "SavedFlea_Slab_Cell", flagType: "boolean" },
+    { name: "#23 The Slab (2/2)", location: " ", flag: "SavedFlea_Slab_06", flagType: "boolean" },
+    { name: "#24 Mount Fay", location: " ", flag: "SavedFlea_Peak_05c", flagType: "boolean" },
+    { name: "#25 Songclave", location: " ", flag: "SavedFlea_Library_09", flagType: "boolean" },
+    { name: "#26 Sands of Karak", location: " ", flag: "SavedFlea_Coral_24", flagType: "boolean" },
+    { name: "#27 Shellwood", location: " ", flag: "SavedFlea_Shellwood_03", flagType: "boolean" },
+    { name: "#28 Memorium", location: " ", flag: "tamedGiantFlea", flagType: "boolean" },
+    { name: "#29 Kratt NPC", location: "Greymoor", flag: "Greymoor_24", flagType: "scene" }, // NPC Value two
+    { name: "#30 Vog NPC", location: "Putrified Ducts", flag: "GLOBAL_SHARED", flagType: "scene" }, // ID Caravan Troupe Hunter
 ];
