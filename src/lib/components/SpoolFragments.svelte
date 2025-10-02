@@ -34,7 +34,7 @@
         <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Unlocked Spool Fragments</h1>
 
         {#each spoolFragmentList as spool}
-            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow">
+            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
                 <span class="flex items-center gap-2">
                     {#if unlockedSpoolFragment(spool, playerData, sceneData)}
                         <span class="text-green-400 text-lg">✅</span>
