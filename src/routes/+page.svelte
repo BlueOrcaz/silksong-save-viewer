@@ -16,6 +16,9 @@
   import Quests from "$lib/components/Quests.svelte";
   import MaskShards from "$lib/components/MaskShards.svelte";
   import MemoryLockets from "$lib/components/MemoryLockets.svelte";
+  import PaleOil from "$lib/components/PaleOil.svelte";
+  import FleaLocations from "$lib/components/FleaLocations.svelte";
+  import ToolPouches from "$lib/components/ToolPouches.svelte";
 
   let decodedResult = null;
 
@@ -27,6 +30,9 @@
   let rosaries = 0;
   let shellShards = 0;
   let saveVersion = "0.0.0.0";
+
+  const playerData = decodedResult?.playerData ?? {};
+  const sceneData = decodedResult?.sceneData ?? {};
 
   async function handleFile(event) {
     const arrayBuffer = event.detail;
@@ -87,6 +93,7 @@
         <Bosses playerData={decodedResult?.playerData ?? {}} />
         <Crests playerData={decodedResult?.playerData ?? {}} />
         <NeedleUpgrade playerData={decodedResult?.playerData ?? {}} />
+        <PaleOil playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
         <AreaMaps playerData={decodedResult?.playerData ?? {}} />
         <Tools playerData={decodedResult?.playerData ?? {}} />
         <BellwayStations playerData={decodedResult?.playerData ?? {}} />
@@ -96,6 +103,8 @@
         <SpoolFragments playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
         <Quests playerData={decodedResult?.playerData ?? {}} />
         <MemoryLockets playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
+        <FleaLocations playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
+        <ToolPouches playerData={decodedResult?.playerData ?? {}} sceneData={decodedResult?.sceneData ?? {}} />
       </div>
     </div>
   </div>

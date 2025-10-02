@@ -231,9 +231,9 @@ export const ventricaStationList = [
 
 export const toolPouchList = [ // wip
     { name: "Tool Pouch #1", location: "Purchase from Mort for 220 Rosaries in Far Fields", flag: "PurchasedPilgrimsRestToolPouch", flagType: "purchase" },
-    { name: "Tool Pouch #2", location: "Complete Loddie's Minigame in The Marrow/Pick up in Act 3", flag: "", flagType: "quest" },
+    { name: "Tool Pouch #2 (WIP)", location: "Complete Loddie's Minigame in The Marrow/Pick up in Act 3", flag: "Bone_12", flagType: "scene" },
     { name: "Tool Pouch #3", location: "Complete the Bugs of Pharloom wish.", flag: "Journal", flagType: "quest" },
-    { name: "Tool Pouch #4", location: "Find 20 Lost Fleas for Fleamaster Mooshka at Fleatopia, Putrified Ducts.", flag: "", flagType: "quest" },
+    { name: "Tool Pouch #4", location: "Find 20 Lost Fleas for Fleamaster Mooshka at Fleatopia, Putrified Ducts.", flag: "FleasCollectedTargetOrder", flagType: "flea" }, // look at fleas collected target order
 ]
 
 export const craftingKitUpgradeList = [
@@ -367,10 +367,6 @@ export const questList = [
     { name: "Survivor Camp Supplies", location: "", saveName: "Courier Delivery Fixer" },
     { name: "Queen's Egg", location: "", saveName: "Courier Delivery Dustpens Slave" },
     { name: "Pilgrim's Rest Supplies", location: "", saveName: "Courier Delivery Pilgrims Rest" },
-
-
-    { name: "Pale Monarch [Act 2]", location: "", saveName: "Citadel Ascent Silk Defeat" },
-    { name: "Last Dive [Act 3]", location: "", saveName: "Black Thread Pt6 Flower" },
 ];
 
 export const maskShardList = [
@@ -434,3 +430,4 @@ export const fleaList = [
     { name: "#29 Kratt NPC", location: "Greymoor", flag: "Greymoor_24", flagType: "scene" }, // NPC Value two
     { name: "#30 Vog NPC", location: "Putrified Ducts", flag: "GLOBAL_SHARED", flagType: "scene" }, // ID Caravan Troupe Hunter
 ];
+
