@@ -104,10 +104,7 @@
     </div>
 
     <div class="flex flex-col justify-center items-center">
-      <!-- Tab buttons -->
-      <div
-        class="rounded-xl p-2 flex flex-wrap justify-center bg-gray-800 text-white"
-      >
+      <div class="rounded-xl p-2 flex flex-wrap justify-center bg-gray-800 text-white">
         {#each tabs as { name }}
           <button
             on:click={() => (currentTab = name)}
@@ -117,7 +114,6 @@
         {/each}
       </div>
 
-      <!-- Tab content -->
       <div class="w-full flex flex-col items-center">
         {#each currentComponents as component}
           <svelte:component
