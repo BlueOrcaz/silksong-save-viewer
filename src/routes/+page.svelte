@@ -25,7 +25,6 @@
   import SilkSkills from "$lib/components/SilkSkills.svelte";
   import Abilities from "$lib/components/Abilities.svelte";
   import CraftMetal from "$lib/components/CraftMetal.svelte";
-  import Completionist from "$lib/components/Completionist.svelte";
   let decodedResult = null;
 
   // default values
@@ -36,6 +35,7 @@
   let rosaries = 0;
   let shellShards = 0;
   let saveVersion = "0.0.0.0";
+  let completionPercentage = 0;
 
   $: playerData = decodedResult?.playerData ?? {};
   $: sceneData = decodedResult?.sceneData ?? {};
@@ -44,6 +44,7 @@
     const arrayBuffer = event.detail;
     decodedResult = await decodeFile(arrayBuffer);
     if (decodedResult) {
+      completionPercentage = decodedResult.playerData.completionPercentage;
       timePlayed = formatTime(Math.floor(decodedResult.playerData.playTime));
       saveVersion = decodedResult.playerData.version;
       maskShards = decodedResult.playerData.maxHealth;
@@ -63,9 +64,8 @@
 
   let currentTab = "Save Info";
 
-  // Each tab can now contain MULTIPLE components
   const tabs = [
-    { name: "Save Info", components: [SaveInfo, Completionist] },
+    { name: "Save Info", components: [SaveInfo] },
     { name: "Bosses", components: [Bosses] },
     { name: "Crests", components: [Crests] },
     {
@@ -131,6 +131,7 @@
             {rosaries}
             {shellShards}
             {silkHearts}
+            {completionPercentage}
           />
         {/each}
       </div>

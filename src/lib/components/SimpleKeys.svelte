@@ -50,7 +50,7 @@
         <div class="col-span-2 flex flex-col items-center mt-4">
             <h1 class="text-3xl font-bold text-center">Collected Simple Keys</h1>
             <p class="text-sm text-gray-400 mt-1">
-                Collected: <span class="text-green-400 font-semibold">{acquiredSimpleKeyCount}</span> / {totalSimpleKeys}%
+                Collected: <span class="text-green-400 font-semibold">{acquiredSimpleKeyCount}</span> / {totalSimpleKeys}
             </p>
         </div>
 

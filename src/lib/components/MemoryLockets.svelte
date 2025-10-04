@@ -66,7 +66,7 @@
                 Collected: <span class="text-green-400 font-semibold"
                     >{collectedMemoryLocketsCount}</span
                 >
-                / {totalMemoryLockets}%
+                / {totalMemoryLockets}
             </p>
         </div>
 

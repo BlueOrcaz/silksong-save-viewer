@@ -57,7 +57,7 @@
                 <span class="text-green-400 font-semibold">
                     {paleOilCount}
                 </span>
-                / {totalPaleOil}%
+                / {totalPaleOil}
             </p>
         </div>
 

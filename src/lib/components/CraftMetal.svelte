@@ -53,7 +53,7 @@
                 Collected: <span class="text-green-400 font-semibold"
                     >{craftMetalCount}</span
                 >
-                / {totalCraftMetal}%
+                / {totalCraftMetal}
             </p>
         </div>
 
