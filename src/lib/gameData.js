@@ -204,94 +204,94 @@ export const ToolList = [
 ]
 
 export const bellwayStationList = [
-    { name: "Bone Bottom", location: "", flag: "UnlockedFastTravel" },
-    { name: "The Marrow", location: "", flag: "UnlockedFastTravel" },
-    { name: "Deep Docks", location: "", flag: "UnlockedDocksStation" },
-    { name: "Far Fields", location: "", flag: "UnlockedBoneforestEastStation" },
-    { name: "Greymoor", location: "", flag: "UnlockedGreymoorStation" },
-    { name: "Bellhart", location: "", flag: "UnlockedBelltownStation" },
-    { name: "Shellwood", location: "", flag: "UnlockedShellwoodStation" },
-    { name: "Blasted Steps", location: "", flag: "UnlockedCoralTowerStation" },
-    { name: "The Slab", location: "", flag: "UnlockedPeakStation" },
-    { name: "Grand Bellway", location: "", flag: "UnlockedCityStation" },
-    { name: "Bilewater", location: "", flag: "UnlockedShadowStation" },
-    { name: "Putrified Ducts", location: "", flag: "UnlockedAqueductStation" },
+    { name: "Bone Bottom", location: "477883", flag: "UnlockedFastTravel" },
+    { name: "The Marrow", location: "477882", flag: "UnlockedFastTravel" },
+    { name: "Deep Docks", location: "477905", flag: "UnlockedDocksStation" },
+    { name: "Far Fields", location: "477933", flag: "UnlockedBoneforestEastStation" },
+    { name: "Greymoor", location: "478037", flag: "UnlockedGreymoorStation" },
+    { name: "Bellhart", location: "478029", flag: "UnlockedBelltownStation" },
+    { name: "Shellwood", location: "478178", flag: "UnlockedShellwoodStation" },
+    { name: "Blasted Steps", location: "478308", flag: "UnlockedCoralTowerStation" },
+    { name: "The Slab", location: "478390", flag: "UnlockedPeakStation" },
+    { name: "Grand Bellway", location: "478374", flag: "UnlockedCityStation" },
+    { name: "Bilewater", location: "478447", flag: "UnlockedShadowStation" },
+    { name: "Putrified Ducts", location: "478411", flag: "UnlockedAqueductStation" },
 ];
 
 export const ventricaStationList = [
-    { name: "Terminus", location: "", flag: ["UnlockedArboriumTube", "UnlockedHangTube", "UnlockedSongTube", "UnlockedCityBellwayTube", "UnlockedUnderTube"] },
-    { name: "Memorium", location: "", flag: "UnlockedArboriumTube" },
-    { name: "High Halls", location: "", flag: "UnlockedHangTube" },
-    { name: "First Shrine", location: "", flag: "UnlockedArboriumTube" },
-    { name: "Choral Chambers", location: "", flag: "UnlockedSongTube" },
-    { name: "Grand Bellway", location: "", flag: "UnlockedCityBellwayTube" },
-    { name: "Underworks", location: "", flag: "UnlockedUnderTube" },
+    { name: "Terminus", location: "478426", flag: ["UnlockedArboriumTube", "UnlockedHangTube", "UnlockedSongTube", "UnlockedCityBellwayTube", "UnlockedUnderTube"] },
+    { name: "Memorium", location: "478425", flag: "UnlockedArboriumTube" },
+    { name: "High Halls", location: "478445", flag: "UnlockedHangTube" },
+    { name: "First Shrine", location: "478427", flag: "UnlockedArboriumTube" },
+    { name: "Choral Chambers", location: "478424", flag: "UnlockedSongTube" },
+    { name: "Grand Bellway", location: "478376", flag: "UnlockedCityBellwayTube" },
+    { name: "Underworks", location: "478422", flag: "UnlockedUnderTube" },
 ];
 
 
 export const toolPouchList = [ // wip
-    { name: "Tool Pouch #1", location: "Purchase from Mort for 220 Rosaries in Far Fields", flag: "PurchasedPilgrimsRestToolPouch", flagType: "purchase" },
-    { name: "Tool Pouch #2 (WIP)", location: "Complete Loddie's Minigame in The Marrow/Pick up in Act 3", flag: "Bone_12", flagType: "scene" },
-    { name: "Tool Pouch #3", location: "Complete the Bugs of Pharloom wish.", flag: "Journal", flagType: "quest" },
-    { name: "Tool Pouch #4", location: "Find 20 Lost Fleas for Fleamaster Mooshka at Fleatopia, Putrified Ducts.", flag: "FleasCollectedTargetOrder", flagType: "flea" }, // look at fleas collected target order
+    { name: "Tool Pouch #1", location: "477950", flag: "PurchasedPilgrimsRestToolPouch", flagType: "purchase" },
+    { name: "Tool Pouch #2 (WIP)", location: "478252", flag: "Bone_12", flagType: "scene" },
+    { name: "Tool Pouch #3", location: "479167", flag: "Journal", flagType: "quest" },
+    { name: "Tool Pouch #4", location: "479436", flag: "FleasCollectedTargetOrder", flagType: "flea" }, // look at fleas collected target order
 ]
 
 export const craftingKitUpgradeList = [
-    { name: "Crafting Kit #1", location: "Purchase from the Forge Daugther for 180 Rosaries.", flag: "PurchasedForgeToolKit", flagType: "purchase" },
-    { name: "Crafting Kit #2", location: "Complete the Crawbug Clearing Wish.", flag: "Crow Feathers", flagType: "quest" },
-    { name: "Crafting Kit #3", location: "Purchase from the Twelfth Architect for 450 Rosaries.", flag: "PurchasedArchitectToolKit", flagType: "purchase" },
-    { name: "Crafting Kit #4", location: "Purchase from Grindle for 700 Rosaries.", flag: "purchasedGrindleToolKit", flagType: "purchase" },
+    { name: "Crafting Kit #1", location: "477919", flag: "PurchasedForgeToolKit", flagType: "purchase" },
+    { name: "Crafting Kit #2", location: "478348", flag: "Crow Feathers", flagType: "quest" },
+    { name: "Crafting Kit #3", location: "478728", flag: "PurchasedArchitectToolKit", flagType: "purchase" },
+    { name: "Crafting Kit #4", location: "478533", flag: "purchasedGrindleToolKit", flagType: "purchase" },
 ];
 
 export const memoryLocketList = [
-    { name: "#1 Moss Grotto", location: "", flag: "Rock Rollers", flagType: "quest" },
-    { name: "#2 The Marrow", location: "", flag: "Bone_18", flagType: "scene" }, // Collectable Item Pickup
-    { name: "#3 Far Fields (1/2)", location: "", flag: "PurchasedPilgrimsRestMemoryLocket", flagType: "boolean" },
-    { name: "#4 Far Fields (2/2)", location: "", flag: "Bone_East_25", flagType: "scene" },
-    { name: "#5 Greymoor (1/2)", location: "", flag: "Greymoor_16", flagType: "scene" },
-    { name: "#6 Greymoor (2/2)", location: "", flag: "Halfway_01", flagType: "scene" },
-    { name: "#7 Hunter's March", location: "", flag: "Ant_20", flagType: "scene" },
-    { name: "#8 Bellhart (1/2)", location: "", flag: "PurchasedBelltownMemoryLocket", flagType: "boolean" },
-    { name: "#9 Bellhart (2/2)", location: "", flag: "Belltown", flagType: "scene" },
-    { name: "#10 Blasted Steps", location: "", flag: "Coral_02", flagType: "scene" }, // Collectable Item Pickup (1)
-    { name: "#11 Wormways", location: "", flag: "Crawl_09", flagType: "scene" },
-    { name: "#12 The Slab", location: "", flag: "Slab_Cell_Quiet", flagType: "scene" },
-    { name: "#13 Sands of Karak", location: "", flag: "Coral_23", flagType: "scene" },
-    { name: "#14 Memorium", location: "", flag: "Arborium_05", flagType: "scene" },
-    { name: "#15 Bilewater (1/2)", location: "", flag: "Shadow_20", flagType: "scene" }, // Collectable Item Pickup (1) OR Collectable Item Pickup
-    { name: "#16 Bilewater (2/2)", location: "", flag: "Shadow_27", flagType: "scene" }, // Sack Corpse Pickup
-    { name: "#17 Whispering Vaults", location: "", flag: "Library_08", flagType: "scene" },
-    { name: "#18 Underworks", location: "", flag: "Under_08", flagType: "scene" },
-    { name: "#19 Deep Docks", location: "", flag: "Dock_13", flagType: "scene" },
-    { name: "#20 Choral Chambers", location: "", flag: "Bellway_City", flagType: "scene" },
+    { name: "#1 Moss Grotto", location: "478222", flag: "Rock Rollers", flagType: "quest" },
+    { name: "#2 The Marrow", location: "478246", flag: "Bone_18", flagType: "scene" }, // Collectable Item Pickup
+    { name: "#3 Far Fields (1/2)", location: "477953", flag: "PurchasedPilgrimsRestMemoryLocket", flagType: "boolean" },
+    { name: "#4 Far Fields (2/2)", location: "479196", flag: "Bone_East_25", flagType: "scene" },
+    { name: "#5 Greymoor (1/2)", location: "478035", flag: "Greymoor_16", flagType: "scene" },
+    { name: "#6 Greymoor (2/2)", location: "478039", flag: "Halfway_01", flagType: "scene" },
+    { name: "#7 Hunter's March", location: "478017", flag: "Ant_20", flagType: "scene" },
+    { name: "#8 Bellhart (1/2)", location: "478204", flag: "PurchasedBelltownMemoryLocket", flagType: "boolean" },
+    { name: "#9 Bellhart (2/2)", location: "478212", flag: "Belltown", flagType: "scene" },
+    { name: "#10 Blasted Steps", location: "478502", flag: "Coral_02", flagType: "scene" }, // Collectable Item Pickup (1)
+    { name: "#11 Wormways", location: "478493", flag: "Crawl_09", flagType: "scene" },
+    { name: "#12 The Slab", location: "479017", flag: "Slab_Cell_Quiet", flagType: "scene" },
+    { name: "#13 Sands of Karak", location: "479204", flag: "Coral_23", flagType: "scene" },
+    { name: "#14 Memorium", location: "479110", flag: "Arborium_05", flagType: "scene" },
+    { name: "#15 Bilewater (1/2)", location: "478787", flag: "Shadow_20", flagType: "scene" }, // Collectable Item Pickup (1) OR Collectable Item Pickup
+    { name: "#16 Bilewater (2/2)", location: "478851", flag: "Shadow_27", flagType: "scene" }, // Sack Corpse Pickup
+    { name: "#17 Whispering Vaults", location: "478676", flag: "Library_08", flagType: "scene" },
+    { name: "#18 Underworks", location: "478571", flag: "Under_08", flagType: "scene" },
+    { name: "#19 Deep Docks", location: "478836", flag: "Dock_13", flagType: "scene" },
+    { name: "#20 Choral Chambers", location: "478372", flag: "Bellway_City", flagType: "scene" },
 ];
 
 export const simpleKeysList = [
-    { name: "Simple Key #1", location: "Bone Bottom, Moss Grotto: Purchase from Pebb for 500 Rosaries.", flag: "PurchasedBonebottomFaithToken", flagType: "boolean" }, //true
-    { name: "Simple Key #2", location: "Songclave, Choral Chambers: Purchase from Jubilana for 650 Rosaries.", flag: "MerchantEnclaveSimpleKey", flagType: "boolean" }, // true
-    { name: "Simple Key #3", location: "Sinner's Road: Obtain from the Roachkeeper enemy on top of Sinner's Road", flag: "Dust_06", flagType: "scene" }, // ID is Collectable Item SimpleKey
-    { name: "Simple Key #4", location: "Sands of Karak: Obtain from the sitting corpse on the rightmost bench.", flag: "Bellshrine_Coral", flagType: "scene" } // ID is Collectable Item Pickup
+    { name: "#1 Bone Bottom", location: "477839", flag: "PurchasedBonebottomFaithToken", flagType: "boolean" }, //true
+    { name: "#2 Choral Chambers", location: "478880", flag: "MerchantEnclaveSimpleKey", flagType: "boolean" }, // true
+    { name: "#3 Sinner's Road", location: "478280", flag: "Dust_06", flagType: "scene" }, // ID is Collectable Item SimpleKey
+    { name: "#4 Sands of Karak", location: "479215", flag: "Bellshrine_Coral", flagType: "scene" } // ID is Collectable Item Pickup
 ];
 
 export const spoolFragmentList = [
-    { name: "#1 Moss Grotto", location: "", flag: "Bone_11b", flagType: "scene" },
-    { name: "#2 Deep Docks (1/2)", location: "", flag: "Bone_East_13", flagType: "scene" },
-    { name: "#3 Deep Docks (2/2)", location: "", flag: "Dock_03c", flagType: "scene" },
-    { name: "#4 Greymoor (1/2)", location: "", flag: "MetCaravanTroupeLeaderJudge", flagType: "boolean" }, // ???
-    { name: "#5 Greymoor (2/2)", location: "", flag: "Greymoor_02", flagType: "scene" },
-    { name: "#6 Bellhart", location: "", flag: "PurchasedBelltownSpoolSegment", flagType: "boolean" },
-    { name: "#7 Weavenest Atla", location: "", flag: "Weave_11", flagType: "scene" },
-    { name: "#8 The Slab", location: "", flag: "Peak_01", flagType: "scene" },
-    { name: "#9 Underworks (1/2)", location: "", flag: "Library_11b", flagType: "scene" },
-    { name: "#10 Underworks (2/2)", location: "", flag: "Under_10", flagType: "scene" },
-    { name: "#11 Choral Chambers", location: "", flag: "MerchantEnclaveSpoolPiece", flagType: "boolean" },
-    { name: "#12 Grand Gate", location: "", flag: "Song_19_entrance", flagType: "scene" },
-    { name: "#13 Memorium", location: "", flag: "Arborium_09", flagType: "scene" },
-    { name: "#14 Whiteward (1/2)", location: "", flag: "Ward_01", flagType: "scene" },
-    { name: "#15 Whiteward (2/2)", location: "", flag: "Save Sherma", flagType: "quest" },
-    { name: "#16 Blasted Steps", location: "", flag: "purchasedGrindleSpoolPiece", flagType: "boolean" },
-    { name: "#17 High Halls", location: "", flag: "Hang_03_top", flagType: "scene" },
-    { name: "#18 Cogwork Core", location: "", flag: "Cog_07", flagType: "scene" },
+    { name: "#1 Moss Grotto", location: "478080", flag: "Bone_11b", flagType: "scene" },
+    { name: "#2 Deep Docks (1/2)", location: "477926", flag: "Bone_East_13", flagType: "scene" },
+    { name: "#3 Deep Docks (2/2)", location: "478825", flag: "Dock_03c", flagType: "scene" },
+    { name: "#4 Choral Chambers", location: "479249", flag: "MerchantEnclaveSpoolPiece", flagType: "boolean" },
+    { name: "#5 Greymoor (2/2)", location: "478263", flag: "Greymoor_02", flagType: "scene" },
+    { name: "#6 Bellhart", location: "478347", flag: "PurchasedBelltownSpoolSegment", flagType: "boolean" },
+    { name: "#7 Weavenest Atla", location: "478230", flag: "Weave_11", flagType: "scene" },
+    { name: "#8 The Slab", location: "478475", flag: "Peak_01", flagType: "scene" },
+    { name: "#9 Underworks (1/2)", location: "478931", flag: "Library_11b", flagType: "scene" },
+    { name: "#10 Underworks (2/2)", location: "478704", flag: "Under_10", flagType: "scene" },
+    { name: "#11 Grand Gate", location: "478586", flag: "Song_19_entrance", flagType: "scene" },
+    { name: "#12 Memorium", location: "479117", flag: "Arborium_09", flagType: "scene" },
+    { name: "#13 Whiteward (1/2)", location: "479317", flag: "Ward_01", flagType: "scene" },
+    { name: "#14 Whiteward (2/2)", location: "479180", flag: "Save Sherma", flagType: "quest" },
+    { name: "#15 Blasted Steps (1/2)", location: "478527", flag: "purchasedGrindleSpoolPiece", flagType: "boolean" },
+    { name: "#16 Blasted Steps (2/2)", location: "478820", flag: "MetCaravanTroupeLeaderJudge", flagType: "boolean" }, 
+    { name: "#17 High Halls", location: "478909", flag: "Hang_03_top", flagType: "scene" },
+    { name: "#18 Cogwork Core", location: "478618", flag: "Cog_07", flagType: "scene" },
 ];
 
 export const questList = [
@@ -370,75 +370,75 @@ export const questList = [
 ];
 
 export const maskShardList = [
-    { name: "#1 Moss Grotto", location: "", flag: "PurchasedBonebottomHeartPiece", flagType: "boolean" },
-    { name: "#2 Far Fields (1/3)", location: "", flag: "Bone_East_20", flagType: "scene" },
-    { name: "#3 Far Fields (2/3)", location: "", flag: "Bone_East_LavaChallenge", flagType: "scene" }, // Heart piece (1)
-    { name: "#4 Far Fields (3/3)", location: "", flag: "Sprintmaster Race", flagType: "quest" },
-    { name: "#5 Deep Docks", location: "", flag: "Dock_08", flagType: "scene" },
-    { name: "#6 Wormways", location: "", flag: "Crawl_02", flagType: "scene" },
-    { name: "#7 Bellhart (1/3)", location: "", flag: "Beastfly Hunt", flagType: "quest" },
-    { name: "#8 Bellhart (2/3)", location: "", flag: "Ant Trapper", flagType: "quest" },
-    { name: "#9 Bellhart (3/3)", location: "", flag: "Destroy Thread Cores", flagType: "quest" },
-    { name: "#10 Shellwood", location: "", flag: "Shellwood_14", flagType: "scene" },
-    { name: "#11 Weavenest Atla", location: "", flag: "Weave_05b", flagType: "scene" },
-    { name: "#12 Blasted Steps", location: "", flag: "Coral_19b", flagType: "scene" },
-    { name: "#13 Choral Chambers", location: "", flag: "MerchantEnclaveSocket", flagType: "boolean" },
-    { name: "#14 Cogwork Core", location: "", flag: "Song_09", flagType: "scene" },
-    { name: "#15 The Slab", location: "", flag: "Slab_17", flagType: "scene" },
-    { name: "#16 Mount Fay (1/2)", location: "", flag: "Peak_04c", flagType: "scene" },
-    { name: "#17 Mount Fay (2/2)", location: "", flag: "Peak_06", flagType: "scene" },
-    { name: "#18 Whispering Vaults", location: "", flag: "Library_05", flagType: "scene" },
-    { name: "#19 Bilewater", location: "", flag: "Shadow_13", flagType: "scene" },
-    { name: "#20 Wisp Thicket", location: "", flag: "Wisp_07", flagType: "scene" },
+    { name: "#1 Moss Grotto", location: "477840", flag: "PurchasedBonebottomHeartPiece", flagType: "boolean" },
+    { name: "#2 Far Fields (1/3)", location: "477975", flag: "Bone_East_20", flagType: "scene" },
+    { name: "#3 Far Fields (2/3)", location: "478841", flag: "Bone_East_LavaChallenge", flagType: "scene" }, // Heart piece (1)
+    { name: "#4 Far Fields (3/3)", location: "479194", flag: "Sprintmaster Race", flagType: "quest" },
+    { name: "#5 Deep Docks", location: "477901", flag: "Dock_08", flagType: "scene" },
+    { name: "#6 Wormways", location: "478091", flag: "Crawl_02", flagType: "scene" },
+    { name: "#7 Bellhart (1/3)", location: "478800", flag: "Beastfly Hunt", flagType: "quest" },
+    { name: "#8 Bellhart (2/3)", location: "479447", flag: "Ant Trapper", flagType: "quest" },
+    { name: "#9 Bellhart (3/3)", location: "479449", flag: "Destroy Thread Cores", flagType: "quest" },
+    { name: "#10 Shellwood", location: "478177", flag: "Shellwood_14", flagType: "scene" },
+    { name: "#11 Weavenest Atla", location: "478233", flag: "Weave_05b", flagType: "scene" },
+    { name: "#12 Blasted Steps", location: "478498", flag: "Coral_19b", flagType: "scene" },
+    { name: "#13 Choral Chambers", location: "478879", flag: "MerchantEnclaveSocket", flagType: "boolean" },
+    { name: "#14 Cogwork Core", location: "478615", flag: "Song_09", flagType: "scene" },
+    { name: "#15 The Slab", location: "479001", flag: "Slab_17", flagType: "scene" },
+    { name: "#16 Mount Fay (1/2)", location: "479460", flag: "Peak_04c", flagType: "scene" }, // double check
+    { name: "#17 Mount Fay (2/2)", location: "479038", flag: "Peak_06", flagType: "scene" }, // double check
+    { name: "#18 Whispering Vaults", location: "478671", flag: "Library_05", flagType: "scene" },
+    { name: "#19 Bilewater", location: "478849", flag: "Shadow_13", flagType: "scene" },
+    { name: "#20 Wisp Thicket", location: "479151", flag: "Wisp_07", flagType: "scene" },
 ];
 
 export const paleOilList = [
-    { name: "Pale Oil #1", location: "", flag: "Library_03", flagType: "scene" },
-    { name: "Pale Oil #2", location: "", flag: "Great Gourmand", flagType: "quest" },
-    { name: "Pale Oil #3", location: "" , flag: "Flea Games", flagType: "quest" },
+    { name: "Pale Oil #1", location: "478668", flag: "Library_03", flagType: "scene" },
+    { name: "Pale Oil #2", location: "478889", flag: "Great Gourmand", flagType: "quest" },
+    { name: "Pale Oil #3", location: "479444" , flag: "Flea Games", flagType: "quest" },
 ];
 
 export const fleaList = [ 
-    { name: "#1 The Marrow", location: " ", flag: "SavedFlea_Bone_06", flagType: "boolean" },
-    { name: "#2 Deep Docks (1/3)", location: " ", flag: "SavedFlea_Dock_16", flagType: "boolean" },
-    { name: "#3 Deep Docks (2/3)", location: " ", flag: "SavedFlea_Bone_East_05", flagType: "boolean" },
-    { name: "#4 Deep Docks (3/3)", location: " ", flag: "SavedFlea_Dock_03d", flagType: "boolean" },
-    { name: "#5 Far Fields (1/2)", location: " ", flag: "SavedFlea_Bone_East_17b", flagType: "boolean" },
-    { name: "#6 Far Fields (2/2)", location: " ", flag: "SavedFlea_Bone_East_10_Church", flagType: "boolean" },
-    { name: "#7 Hunters March", location: " ", flag: "SavedFlea_Ant_03", flagType: "boolean" },
-    { name: "#8 Greymoor (1/2)", location: " ", flag: "SavedFlea_Greymoor_15b", flagType: "boolean" },
-    { name: "#9 Greymoor (2/2)", location: " ", flag: "SavedFlea_Greymoor_06", flagType: "boolean" },
-    { name: "#10 Sinner's Road", location: " ", flag: "SavedFlea_Dust_12", flagType: "boolean" },
-    { name: "#11 Whispering Vaults", location: " ", flag: "SavedFlea_Library_01", flagType: "boolean" },
-    { name: "#12 Bilewater (1/3)", location: " ", flag: "SavedFlea_Dust_09", flagType: "boolean" },
-    { name: "#13 Bilewater (2/3)", location: " ", flag: "SavedFlea_Shadow_10", flagType: "boolean" },
-    { name: "#14 Bilewater (3/3)", location: " ", flag: "SavedFlea_Shadow_28", flagType: "boolean" },
-    { name: "#15 Underworks (1/2)", location: "", flag: "SavedFlea_Under_21", flagType: "boolean" },
-    { name: "#16 Underworks (2/2)", location: "", flag: "SavedFlea_Under_23", flagType: "boolean" },
-    { name: "#17 Blasted Steps", location: " ", flag: "SavedFlea_Coral_35", flagType: "boolean" },
-    { name: "#18 Bellhart", location: " ", flag: "SavedFlea_Belltown_04", flagType: "boolean" },
-    { name: "#19 Wormways", location: " ", flag: "SavedFlea_Crawl_06", flagType: "boolean" },
-    { name: "#20 Coral Chambers (1/2)", location: " ", flag: "SavedFlea_Song_11", flagType: "boolean" },
-    { name: "#21 Coral Chambers (2/2)", location: " ", flag: "SavedFlea_Song_14", flagType: "boolean" },
-    { name: "#22 The Slab (1/2)", location: " ", flag: "SavedFlea_Slab_Cell", flagType: "boolean" },
-    { name: "#23 The Slab (2/2)", location: " ", flag: "SavedFlea_Slab_06", flagType: "boolean" },
-    { name: "#24 Mount Fay", location: " ", flag: "SavedFlea_Peak_05c", flagType: "boolean" },
-    { name: "#25 Songclave", location: " ", flag: "SavedFlea_Library_09", flagType: "boolean" },
-    { name: "#26 Sands of Karak", location: " ", flag: "SavedFlea_Coral_24", flagType: "boolean" },
-    { name: "#27 Shellwood", location: " ", flag: "SavedFlea_Shellwood_03", flagType: "boolean" },
-    { name: "#28 Memorium", location: " ", flag: "tamedGiantFlea", flagType: "boolean" },
-    { name: "#29 Kratt NPC", location: "Greymoor", flag: "Greymoor_24", flagType: "scene" }, // NPC Value two
-    { name: "#30 Vog NPC", location: "Putrified Ducts", flag: "GLOBAL_SHARED", flagType: "scene" }, // ID Caravan Troupe Hunter
+    { name: "#1 The Marrow", location: "477890", flag: "SavedFlea_Bone_06", flagType: "boolean" },
+    { name: "#2 Deep Docks (1/3)", location: "477907", flag: "SavedFlea_Dock_16", flagType: "boolean" }, 
+    { name: "#3 Deep Docks (2/3)", location: "477916", flag: "SavedFlea_Bone_East_05", flagType: "boolean" }, 
+    { name: "#4 Deep Docks (3/3)", location: "478437", flag: "SavedFlea_Dock_03d", flagType: "boolean" }, 
+    { name: "#5 Far Fields (1/2)", location: "477940", flag: "SavedFlea_Bone_East_17b", flagType: "boolean" },
+    { name: "#6 Far Fields (2/2)", location: "478219", flag: "SavedFlea_Bone_East_10_Church", flagType: "boolean" },
+    { name: "#7 Hunters March", location: "477999", flag: "SavedFlea_Ant_03", flagType: "boolean" },
+    { name: "#8 Greymoor (1/2)", location: "478145", flag: "SavedFlea_Greymoor_15b", flagType: "boolean" }, 
+    { name: "#9 Greymoor (2/2)", location: "478287", flag: "SavedFlea_Greymoor_06", flagType: "boolean" },
+    { name: "#10 Sinner's Road", location: "478360", flag: "SavedFlea_Dust_12", flagType: "boolean" },
+    { name: "#11 Whispering Vaults", location: "478402", flag: "SavedFlea_Library_01", flagType: "boolean" },
+    { name: "#12 Bilewater (1/3)", location: "478378", flag: "SavedFlea_Dust_09", flagType: "boolean" },
+    { name: "#13 Bilewater (2/3)", location: "478408", flag: "SavedFlea_Shadow_10", flagType: "boolean" }, 
+    { name: "#14 Bilewater (3/3)", location: "478443", flag: "SavedFlea_Shadow_28", flagType: "boolean" }, 
+    { name: "#15 Underworks (1/2)", location: "478420", flag: "SavedFlea_Under_21", flagType: "boolean" },
+    { name: "#16 Underworks (2/2)", location: "478419", flag: "SavedFlea_Under_23", flagType: "boolean" },
+    { name: "#17 Blasted Steps", location: "478386", flag: "SavedFlea_Coral_35", flagType: "boolean" },
+    { name: "#18 Bellhart", location: "478193", flag: "SavedFlea_Belltown_04", flagType: "boolean" },
+    { name: "#19 Wormways", location: "478450", flag: "SavedFlea_Crawl_06", flagType: "boolean" },
+    { name: "#20 Coral Chambers (1/2)", location: "478416", flag: "SavedFlea_Song_11", flagType: "boolean" },
+    { name: "#21 Coral Chambers (2/2)", location: "478398", flag: "SavedFlea_Song_14", flagType: "boolean" },
+    { name: "#22 The Slab (1/2)", location: "478393", flag: "SavedFlea_Slab_Cell", flagType: "boolean" },
+    { name: "#23 The Slab (2/2)", location: "478392", flag: "SavedFlea_Slab_06", flagType: "boolean" },
+    { name: "#24 Mount Fay", location: "478380", flag: "SavedFlea_Peak_05c", flagType: "boolean" },
+    { name: "#25 Songclave", location: "478404", flag: "SavedFlea_Library_09", flagType: "boolean" },
+    { name: "#26 Sands of Karak", location: "478385", flag: "SavedFlea_Coral_24", flagType: "boolean" },
+    { name: "#27 Shellwood", location: "478176", flag: "SavedFlea_Shellwood_03", flagType: "boolean" },
+    { name: "#28 Memorium", location: "478413", flag: "tamedGiantFlea", flagType: "boolean" },
+    { name: "#29 Kratt NPC", location: "478271", flag: "Greymoor_24", flagType: "scene" }, // NPC Value two
+    { name: "#30 Vog NPC", location: "479138", flag: "GLOBAL_SHARED", flagType: "scene" }, // ID Caravan Troupe Hunter
 ];
 
 export const craftMetalList = [
-    { name: "#1 Moss Grotto", location: "", flag: "PurchasedBonebottomToolMetal", flagType: "purchase" },
-    { name: "#2 The Marrow", location: "", flag: "Bone_07", flagType: "scene" }, // tool_metal_deposit
-    { name: "#3 Deep Docks", location: "", flag: "CollectedToolMetal", flagType: "purchase" },
-    { name: "#4 Blasted Steps", location: "", flag: "Coral_32", flagType: "scene" },
-    { name: "#5 Songclave", location: "", flag: "MerchantEnclaveToolMetal", flagType: "purchase" },
-    { name: "#6 Underworks", location: "", flag: "Under_19b", flagType: "scene" },
-    { name: "#7 Putrified Ducts", location: "", flag: "Aqueduct_05", flagType: "scene" },
-    { name: "#8 Wisp Thicket", location: "", flag: "Wisp_05", flagType: "scene" },
+    { name: "#1 Moss Grotto", location: "477838", flag: "PurchasedBonebottomToolMetal", flagType: "purchase" },
+    { name: "#2 The Marrow", location: "477894", flag: "Bone_07", flagType: "scene" }, // tool_metal_deposit
+    { name: "#3 Deep Docks", location: "477937", flag: "CollectedToolMetal", flagType: "purchase" },
+    { name: "#4 Blasted Steps", location: "478541", flag: "Coral_32", flagType: "scene" },
+    { name: "#5 Songclave", location: "479250", flag: "MerchantEnclaveToolMetal", flagType: "purchase" },
+    { name: "#6 Underworks", location: "478711", flag: "Under_19b", flagType: "scene" },
+    { name: "#7 Putrified Ducts", location: "479139", flag: "Aqueduct_05", flagType: "scene" },
+    { name: "#8 Wisp Thicket", location: "479157", flag: "Wisp_05", flagType: "scene" },
 ]
 
