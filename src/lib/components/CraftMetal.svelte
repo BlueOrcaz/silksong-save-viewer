@@ -59,7 +59,7 @@
 
         {#each craftMetalList as metal}
             <div
-                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700"
+                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-9"
             >
                 <span class="flex items-center gap-2">
                     {#if isCraftMetalFound(metal, playerData, sceneData)}

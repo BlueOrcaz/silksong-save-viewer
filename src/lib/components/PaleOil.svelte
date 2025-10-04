@@ -62,7 +62,7 @@
         </div>
 
         {#each paleOilList as oil}
-            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
+            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-6">
                 <span class="flex items-center gap-2">
                     {#if foundPaleOil(oil, playerData, sceneData)}
                         <span class="text-green-400 text-lg">✅</span>

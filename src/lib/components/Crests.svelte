@@ -50,10 +50,10 @@
     </p>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
     {#each crestList as crest}
       <div
-        class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700"
+        class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-5"
       >
         <span class="flex items-center gap-2">
           {#if isCrestUnlocked(crest, playerData)}
@@ -73,15 +73,13 @@
           >
             View Map
           </a>
-        {:else}
-          <span class="text-xs text-gray-400 italic">Unknown</span>
         {/if}
       </div>
     {/each}
 
     {#each vesticrestList as vesticrest}
       <div
-        class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700"
+        class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-2"
       >
         <span class="flex items-center gap-2">
           {#if playerData?.[vesticrest.flag]}

@@ -1,7 +1,7 @@
 <script>
     export let playerData = {};
     import { silkSkillsList } from "$lib/gameData";
-    import { flattenData } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
 
     let flatPlayerData = {};
     let unlockedSilkSkillsCount = 0;
@@ -34,15 +34,28 @@
         </div>
 
         {#each silkSkillsList as skill}
-            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
+            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-20">
                 <span class="flex items-center gap-2">
-                    {#if playerData?.[skill.flag] == true}
+                    {#if flatPlayerData?.[skill.flag] === true}
                         <span class="text-green-400 text-lg">✅</span>
                     {:else}
                         <span class="text-red-400 text-lg">❌</span>
                     {/if}
                     <span class="font-medium">{skill.name}</span>
                 </span>
+
+                {#if skill.location}
+                    <a
+                        href={getLocationUrl(skill.location)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-xs text-blue-400 hover:underline"
+                    >
+                        View Map
+                    </a>
+                {:else}
+                    <span class="text-xs text-gray-400 italic">Unknown</span>
+                {/if}
             </div>
         {/each}
     </div>

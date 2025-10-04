@@ -66,7 +66,7 @@
         </div>
 
         {#each spoolFragmentList as spool}
-            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
+            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-7">
                 <span class="flex items-center gap-2">
                     {#if unlockedSpoolFragment(spool, playerData, sceneData)}
                         <span class="text-green-400 text-lg">✅</span>
