@@ -86,7 +86,7 @@
       components: [AreaMaps, BellwayStations, VentricaStations],
     },
     { name: "Tools", components: [Tools] },
-    { name: "Collectables", components: [FleaLocations, SimpleKeys, CraftMetal, PaleOil, MemoryLockets, CraftMetal] },
+    { name: "Collectables", components: [FleaLocations, SimpleKeys, CraftMetal, PaleOil, MemoryLockets] },
   ];
 
   $: currentComponents =

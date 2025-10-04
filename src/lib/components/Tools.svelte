@@ -28,19 +28,17 @@
     export { unlockedToolsCount, totalToolCount };
 </script>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
-            <div class="col-span-2 flex flex-col items-center mt-4">
-            <h1 class="text-2xl font-bold text-center">Unlocked Tools</h1>
-            <p class="text-sm text-gray-400 mt-1">
-                Unlocked: 
-                <span class="text-green-400 font-semibold">
-                    {unlockedToolsCount}
-                </span>
-                / {totalToolCount}
-            </p>
-        </div>
+<div class="w-full max-w-4xl mx-auto p-6">
+  <div class="flex flex-col items-center text-center mb-6">
+    <h1 class="text-3xl font-bold mb-2">Unlocked Tools</h1>
+    <p class="text-sm text-gray-400">
+      Unlocked:
+      <span class="text-green-400 font-semibold">{unlockedToolsCount}</span>
+      / {totalToolCount}
+    </p>
+  </div>
 
-
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {#each ToolList as tool}
         <div class="flex-col flex justify-between text-center items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
             <span class="flex items-center gap-2">
@@ -66,5 +64,6 @@
             {/if}
         </div>
     {/each}
+    </div>
 </div>
 

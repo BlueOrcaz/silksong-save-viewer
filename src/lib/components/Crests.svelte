@@ -14,12 +14,12 @@
 
   let flatPlayerData = {};
 
-  
   let unlockedCrestCount = 0;
   let totalCrests = crestList.length + vesticrestList.length;
 
   $: if (playerData) {
     flatPlayerData = flattenData(playerData);
+
     let count = 0;
     for (const crest of crestList) {
       if (isCrestUnlocked(crest, flatPlayerData)) {
@@ -27,30 +27,30 @@
       }
     }
 
+    let vesticrestCount = 0;
     for (const vesticrest of vesticrestList) {
-      if (isCrestUnlocked(vesticrest, flatPlayerData)) {
-        count++;
+      if (playerData?.[vesticrest.flag]) {
+        vesticrestCount++;
       }
     }
 
-    unlockedCrestCount = count;
+    unlockedCrestCount = count + vesticrestCount;
   }
 
   export { unlockedCrestCount, totalCrests };
 </script>
 
-<div class="flex justify-center items-center">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
-    <div class="col-span-2 flex flex-col items-center mt-4">
-      <h1 class="text-2xl font-bold text-center">Acquired Crests</h1>
-      <p class="text-sm text-gray-400 mt-1">
-        Acquired: <span class="text-green-400 font-semibold"
-          >{unlockedCrestCount}</span
-        >
-        / {totalCrests}%
-      </p>
-    </div>
+<div class="w-full max-w-4xl mx-auto p-6">
+  <div class="flex flex-col items-center text-center mb-6">
+    <h1 class="text-3xl font-bold mb-2">Unlocked Crests</h1>
+    <p class="text-sm text-gray-400">
+      Unlocked:
+      <span class="text-green-400 font-semibold">{unlockedCrestCount}</span>
+      / {totalCrests}
+    </p>
+  </div>
 
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {#each crestList as crest}
       <div
         class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700"

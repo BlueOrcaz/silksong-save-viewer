@@ -16,7 +16,7 @@
             const sceneList = sceneData?.persistentBools?.serializedList ?? [];
             return sceneList.some(
                 (entry) =>
-                    entry.SceneName === key.flag &&
+                    entry.SceneName === metal.flag &&
                     entry.ID === "Collectable Item Pickup - Tool Metal" &&
                     entry.Value === true,
             );
@@ -48,7 +48,7 @@
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
         <div class="col-span-2 flex flex-col items-center mt-4">
-            <h1 class="text-2xl font-bold text-center">Collected Craft Metal</h1>
+            <h1 class="text-3xl font-bold text-center">Collected Craft Metal</h1>
             <p class="text-sm text-gray-400 mt-1">
                 Collected: <span class="text-green-400 font-semibold"
                     >{craftMetalCount}</span

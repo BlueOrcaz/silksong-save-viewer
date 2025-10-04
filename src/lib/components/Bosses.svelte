@@ -46,7 +46,6 @@
   export { defeatedBossCount, totalBosses };
 </script>
 
-
 <div class="w-full max-w-4xl mx-auto p-6">
   <div class="flex flex-col items-center text-center mb-6">
     <h1 class="text-3xl font-bold mb-2">Defeated Bosses</h1>
