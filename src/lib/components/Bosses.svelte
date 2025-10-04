@@ -6,6 +6,10 @@
   function isBossDefeated(boss, playerData) {
     if (!playerData || !boss.flag) return false;
 
+    if (typeof boss.check === "function") {
+      return boss.check(playerData);
+    }
+
     if (boss.flagType === "boolean") {
       return playerData?.[boss.flag] === true;
     }

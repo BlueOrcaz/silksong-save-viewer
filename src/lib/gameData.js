@@ -11,7 +11,7 @@ export const abilityList = [
 ];
 
 export const bossList = [
-    { name: "Moss Mother (1/2)", location: "476904", flag: "defeatedMossMother", flagType: "boolean" },
+    { name: "Moss Mother (1/3)", location: "476904", flag: "defeatedMossMother", flagType: "boolean" },
     { name: "Bell Beast", location: "Test", flag: "defeatedBellBeast", flagType: "boolean" },
     { name: "Lace (1/2)", location: "", flag: "defeatedLace1", flagType: "boolean" },
     { name: "Fourth Chorus", location: "", flag: "defeatedSongGolem", flagType: "boolean" },
@@ -26,7 +26,7 @@ export const bossList = [
         name: "Moss Mother (2/3)", location: "", flag: "Moss Mother", flagType: "journal", check: (playerData) => {
             const kills = playerData?.EnemyJournalKillData?.list?.find((entry) => entry.Name === "Mossbone Mother"
             )?.Record.Kills || 0;
-            return kills == 3;
+            return kills >= 3;
         }
     },
     { name: "Savage Beastfly (2/2)", location: "", flag: "defeatedBoneFlyerGiantGolemScene", flagType: "boolean" },
@@ -59,8 +59,8 @@ export const bossList = [
     },
     { name: "Lost Garmond", location: "", flag: "garmondBlackThreadDefeated", flagType: "boolean" },
     { name: "Crawfather", location: "", flag: "Crawfather", flagType: "journal" },
-    { name: "Plasmified Zongo", location: "", flag: "Blue Assistant", flagType: "journal" },
-    { name: "Watcher At the Edge", location: "", flag: "Song Knight", flagType: "journal" },
+    { name: "Plasmified Zongo", location: "", flag: "BlueScientistDead", flagType: "boolean" },
+    { name: "Watcher At the Edge", location: "", flag: "Coral Warrior Grey", flagType: "journal" },
     { name: "Palestag", location: "", flag: "defeatedWhiteCloverstag", flagType: "boolean" },
     { name: "Clover Dancers", location: "", flag: "defeatedCloverDancers", flagType: "boolean" },
     { name: "Gurr The Outcast", location: "", flag: "defeatedAntTrapper", flagType: "boolean" },
@@ -71,7 +71,7 @@ export const bossList = [
     { name: "Skarrsinger Karmelita", location: "", flag: "defeatedAntQueen", flagType: "boolean" },
     { name: "Crust King Khann", location: "", flag: "defeatedCoralKing", flagType: "boolean" },
     { name: "Lost Lace", location: "", flag: "Lost Lace", flagType: "journal" },
-    { name: "Summoned Saviour", location: "", flag: "Growstone", flagType: "collectable" },
+    { name: "Summoned Saviour", location: "", flag: "Abyss Mass", flagType: "journal" },
 ];
 
 export const crestList = [
@@ -152,7 +152,7 @@ export const ToolList = [
     { name: "Conchcutter", location: "", saveName: "Conch Drill" },
     { name: "Silkshot (Forge Daughter)", location: "", saveName: "WebShot Forge" },
     { name: "Silkshot (Twelfth Architect)", location: "", saveName: "WebShot Architect" },
-    { name: "Silkshot (Mount Fay)", location: "", saveName: "WebShot" },
+    { name: "Silkshot (Mount Fay)", location: "", saveName: "WebShot Weaver" },
     { name: "Delver's Drill", location: "", saveName: "Screw Attack" },
     { name: "Cogwork Wheel", location: "", saveName: "Cogwork Saw" },
     { name: "Cogfly", location: "", saveName: "Cogwork Flier" },
@@ -330,8 +330,6 @@ export const questList = [
     { name: "Balm for the Wounded", location: "", saveName: "Save Sherma" },
     { name: "Savage Beastfly", location: "", saveName: "Beastfly Hunt" },
     { name: "Cloaks of the Choir", location: "", saveName: "Song Pilgrim Cloaks" },
-    { name: "Final Audience #1", location: "", saveName: "Steel Sentinel" },
-    { name: "Final Audience #2", location: "", saveName: "Steel Sentinel Pt2" },
     { name: "Strengthening Songclave", location: "", saveName: "Songclave Donation 2" },
     { name: "The Wailing Mother", location: "", saveName: "Broodmother Hunt" },
     { name: "Broodfeast", location: "", saveName: "Huntress Quest" },
@@ -367,6 +365,8 @@ export const questList = [
     { name: "Survivor Camp Supplies", location: "", saveName: "Courier Delivery Fixer" },
     { name: "Queen's Egg", location: "", saveName: "Courier Delivery Dustpens Slave" },
     { name: "Pilgrim's Rest Supplies", location: "", saveName: "Courier Delivery Pilgrims Rest" },
+    { name: "A Vassal Lost #1", location: "", saveName: "Steel Sentinel" },
+    { name: "A Vassal Lost #2", location: "", saveName: "Steel Sentinel Pt2" },
 ];
 
 export const maskShardList = [
