@@ -1,15 +1,30 @@
 <script>
     export let playerData = {};
-    
     import { needleUpgradeList } from "$lib/gameData";
+
+    // Reactive statement — re-runs whenever playerData changes
+    $: unlockedNeedleUpgradeCount = needleUpgradeList.filter(
+        (upgrade) => playerData?.nailUpgrades >= upgrade.index
+    ).length;
+
+    $: totalUpgrades = needleUpgradeList.length;
 </script>
 
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Needle Upgrades</h1>
+        <div class="col-span-2 flex flex-col items-center mt-4">
+            <h1 class="text-2xl font-bold text-center">Needle Upgrades</h1>
+            <p class="text-sm text-gray-400 mt-1">
+                Unlocked: 
+                <span class="text-green-400 font-semibold">
+                    {unlockedNeedleUpgradeCount}
+                </span>
+                / {totalUpgrades}
+            </p>
+        </div>
 
         {#each needleUpgradeList as upgrade}
-            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
+            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700">
                 <span class="flex items-center gap-2">
                     {#if playerData.nailUpgrades >= upgrade.index}
                         <span class="text-green-400 text-lg">✅</span>

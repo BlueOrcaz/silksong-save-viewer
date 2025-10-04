@@ -431,3 +431,14 @@ export const fleaList = [
     { name: "#30 Vog NPC", location: "Putrified Ducts", flag: "GLOBAL_SHARED", flagType: "scene" }, // ID Caravan Troupe Hunter
 ];
 
+export const craftMetalList = [
+    { name: "#1 Moss Grotto", location: "", flag: "PurchasedBonebottomToolMetal", flagType: "purchase" },
+    { name: "#2 The Marrow", location: "", flag: "Bone_07", flagType: "scene" }, // tool_metal_deposit
+    { name: "#3 Deep Docks", location: "", flag: "CollectedToolMetal", flagType: "purchase" },
+    { name: "#4 Blasted Steps", location: "", flag: "Coral_32", flagType: "scene" },
+    { name: "#5 Songclave", location: "", flag: "MerchantEnclaveToolMetal", flagType: "purchase" },
+    { name: "#6 Underworks", location: "", flag: "Under_19b", flagType: "scene" },
+    { name: "#7 Putrified Ducts", location: "", flag: "Aqueduct_05", flagType: "scene" },
+    { name: "#8 Wisp Thicket", location: "", flag: "Wisp_05", flagType: "scene" },
+]
+

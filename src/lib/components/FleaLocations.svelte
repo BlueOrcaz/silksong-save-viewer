@@ -1,7 +1,7 @@
 <script>
     export let playerData = {};
     export let sceneData = {};
-    
+
     import { getLocationUrl } from "$lib/utils";
     import { fleaList } from "$lib/gameData";
 
@@ -13,8 +13,10 @@
         }
 
         if (flea.flagType === "scene") {
-            const sceneBoolList = sceneData?.persistentBools?.serializedList ?? [];
-            const sceneIntList = sceneData?.persistentInts?.serializedList ?? [];
+            const sceneBoolList =
+                sceneData?.persistentBools?.serializedList ?? [];
+            const sceneIntList =
+                sceneData?.persistentInts?.serializedList ?? [];
 
             const hasCaravanTroupeHunter = sceneBoolList.some(
                 (entry) =>
@@ -25,7 +27,7 @@
 
             const hasNPC = sceneIntList.some(
                 (entry) =>
-                    entry.SceneName === flea.flag &&    
+                    entry.SceneName === flea.flag &&
                     entry.ID === "NPC" &&
                     entry.Value === 2,
             );
@@ -35,13 +37,26 @@
 
         return false;
     }
+
+    $: fleaCount = fleaList.filter((flea) => foundFlea(flea, playerData, sceneData)).length;
+    $: totalFleas = fleaList.length;
+
+    export { fleaCount, totalFleas };
 </script>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
-    <h1 class="col-span-1 md:col-span-2 lg:col-span-3 text-2xl font-bold text-center mt-4">Fleas Found</h1>
+    <div class="col-span-2 flex flex-col items-center mt-4">
+        <h1 class="text-2xl font-bold text-center">Fleas Found</h1>
+        <p class="text-sm text-gray-400 mt-1">
+            Found: <span class="text-green-400 font-semibold">{fleaCount}</span>
+            / {totalFleas}%
+        </p>
+    </div>
 
     {#each fleaList as flea}
-        <div class="flex-col flex justify-between text-center items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
+        <div
+            class="flex-col flex justify-between text-center items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700"
+        >
             <span class="flex items-center gap-2">
                 {#if foundFlea(flea, playerData, sceneData)}
                     <span class="text-green-400 text-lg">✅</span>

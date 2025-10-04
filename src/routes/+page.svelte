@@ -24,6 +24,8 @@
   import SimpleKeys from "$lib/components/SimpleKeys.svelte";
   import SilkSkills from "$lib/components/SilkSkills.svelte";
   import Abilities from "$lib/components/Abilities.svelte";
+  import CraftMetal from "$lib/components/CraftMetal.svelte";
+  import Completionist from "$lib/components/Completionist.svelte";
   let decodedResult = null;
 
   // default values
@@ -63,9 +65,9 @@
 
   // Each tab can now contain MULTIPLE components
   const tabs = [
-    { name: "Save Info", components: [SaveInfo] },
+    { name: "Save Info", components: [SaveInfo, Completionist] },
     { name: "Bosses", components: [Bosses] },
-    { name: "Crests", components: [Crests, MemoryLockets] },
+    { name: "Crests", components: [Crests, MemoryLockets, CraftMetal] },
     {
       name: "Upgrades",
       components: [
@@ -85,8 +87,7 @@
       components: [AreaMaps, BellwayStations, VentricaStations],
     },
     { name: "Tools", components: [Tools] },
-    { name: "Collectables", components: [FleaLocations, SimpleKeys] },
-    { name: "Completionist", components: [] },
+    { name: "Collectables", components: [FleaLocations, SimpleKeys, CraftMetal] },
   ];
 
   $: currentComponents =

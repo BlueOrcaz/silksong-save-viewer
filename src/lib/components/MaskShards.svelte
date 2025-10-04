@@ -34,14 +34,31 @@
             );
         }
     }
+
+    $: unlockedMaskShardCount = maskShardList.filter((mask) =>
+        unlockedMaskShard(mask, playerData, sceneData)
+    ).length;
+    $: totalMasks = maskShardList.length;
+
+    export { unlockedMaskShardCount, totalMasks };
 </script>
 
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Unlocked Mask Shards</h1>
+        <div class="col-span-2 flex flex-col items-center mt-4">
+            <h1 class="text-2xl font-bold text-center">Unlocked Mask Shards</h1>
+            <p class="text-sm text-gray-400 mt-1">
+                Unlocked: <span class="text-green-400 font-semibold"
+                    >{unlockedMaskShardCount}</span
+                >
+                / {totalMasks}%
+            </p>
+        </div>
 
         {#each maskShardList as mask}
-            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
+            <div
+                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700"
+            >
                 <span class="flex items-center gap-2">
                     {#if unlockedMaskShard(mask, playerData, sceneData)}
                         <span class="text-green-400 text-lg">✅</span>
