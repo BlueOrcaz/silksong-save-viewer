@@ -1,13 +1,21 @@
 <script>
     export let playerData = {};
     import { needleUpgradeList } from "$lib/gameData";
+    import { flattenData } from "$lib/utils";
 
-    // Reactive statement — re-runs whenever playerData changes
-    $: unlockedNeedleUpgradeCount = needleUpgradeList.filter(
-        (upgrade) => playerData?.nailUpgrades >= upgrade.index
-    ).length;
-
-    $: totalUpgrades = needleUpgradeList.length;
+    let flatPlayerData = {};
+    let unlockedNeedleUpgradeCount = 0;
+    let totalUpgrades = needleUpgradeList.length;
+    $: if (playerData) {
+        flatPlayerData = flattenData(playerData);
+        let count = 0;
+        for (const upgrade of needleUpgradeList) {
+            if (flatPlayerData.nailUpgrades >= upgrade.index) {
+                count++;
+            }
+        }
+        unlockedNeedleUpgradeCount = count;
+    }
 </script>
 
 <div class="flex justify-center items-center">

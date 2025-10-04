@@ -1,24 +1,24 @@
 <script>
   export let playerData = {};
   import { bossList } from "$lib/gameData";
-  import { getLocationUrl } from "$lib/utils";
+  import { flattenData, getLocationUrl } from "$lib/utils";
 
-  function isBossDefeated(boss, data) {
-    if (!data || !boss.flag) return false;
+  function isBossDefeated(boss, playerData) {
+    if (!playerData || !boss.flag) return false;
 
     if (boss.flagType === "boolean") {
-      return data[boss.flag] === true;
+      return playerData?.[boss.flag] === true;
     }
 
     if (boss.flagType === "journal") {
-      const journalList = data?.EnemyJournalKillData?.list ?? [];
+      const journalList = playerData?.EnemyJournalKillData?.list ?? [];
       return journalList.some(
         (entry) => entry.Name === boss.flag && entry.Record?.Kills > 0,
       );
     }
 
     if (boss.flagType === "collectable") {
-      const collectableList = data?.Collectables?.savedData ?? [];
+      const collectableList = playerData?.Collectables?.savedData ?? [];
       return collectableList.some(
         (entry) => entry.Name === boss.flag && entry.Data?.Amount >= 1,
       );
@@ -27,16 +27,25 @@
     return false;
   }
 
-  $: flatPlayerData = JSON.parse(JSON.stringify(playerData));
+  let flatData = {};
+  let defeatedBossCount = 0;
+  let totalBosses = bossList.length;
 
-  $: bossStatuses = bossList.map(boss => ({
-    ...boss,
-    defeated: isBossDefeated(boss, flatPlayerData)
-  }));
+  $: if (playerData) {
+    flatData = flattenData(playerData);
 
-  $: defeatedBossCount = bossStatuses.filter(b => b.defeated).length;
-  $: totalBosses = bossStatuses.length;
+    let count = 0;
+    for (const boss of bossList) {
+      if (isBossDefeated(boss, flatData)) {
+        count++;
+      }
+    }
+    defeatedBossCount = count;
+  }
+
+  export { defeatedBossCount, totalBosses };
 </script>
+
 
 <div class="w-full max-w-4xl mx-auto p-6">
   <div class="flex flex-col items-center text-center mb-6">
@@ -49,16 +58,12 @@
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {#each bossStatuses as boss}
+    {#each bossList as boss}
       <div
-        class={`flex flex-col justify-between items-center p-4 rounded-2xl shadow-md border transition-all ${
-          boss.defeated
-            ? 'bg-green-900/30 border-green-600'
-            : 'bg-gray-800/60 border-gray-700'
-        }`}
+        class="flex flex-col justify-between items-center bg-gray-800/60 p-4 rounded-2xl shadow-md border border-gray-700"
       >
         <span class="flex items-center gap-2 mb-1">
-          {#if boss.defeated}
+          {#if isBossDefeated(boss, playerData)}
             <span class="text-green-400 text-lg">✅</span>
           {:else}
             <span class="text-red-400 text-lg">❌</span>

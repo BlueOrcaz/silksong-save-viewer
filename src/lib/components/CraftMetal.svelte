@@ -3,7 +3,7 @@
     export let playerData = {};
 
     import { craftMetalList } from "$lib/gameData";
-    import { getLocationUrl } from "$lib/utils";
+    import { getLocationUrl, flattenData } from "$lib/utils";
 
     function isCraftMetalFound(metal, playerData, sceneData) {
         if (!metal.flag || !playerData || !sceneData) return false;
@@ -25,8 +25,22 @@
         return false;
     }
 
-    $: craftMetalCount = craftMetalList.filter((metal) => isCraftMetalFound(metal, playerData, sceneData)).length;
-    $: totalCraftMetal = craftMetalList.length;
+    let flatPlayerData = {};
+    let flatSceneData = {};
+    let craftMetalCount = 0;
+    let totalCraftMetal = craftMetalList.length;
+
+    $: if (playerData) { 
+        flatPlayerData = flattenData(playerData);
+        flatSceneData = flattenData(sceneData);
+        let count = 0;
+        for (const metal of craftMetalList) {
+            if (isCraftMetalFound(metal, flatPlayerData, flatSceneData) === true) {
+                count++;
+            } 
+        }
+        craftMetalCount = count;
+    }
 
     export { craftMetalCount, totalCraftMetal };
 </script>

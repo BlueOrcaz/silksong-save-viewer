@@ -1,11 +1,25 @@
 <script>
     export let playerData = {};
     import { mapList } from "$lib/gameData";
-    import { getLocationUrl } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
 
-    $: unlockedMapCount = mapList.filter(
-        (area) => playerData?.[area.flag] === true).length;
-    $: totalAreaMaps = mapList.length;
+
+    let flatPlayerData = {};
+    let unlockedMapCount = 0;
+    let totalAreaMaps = mapList.length;
+
+    $: if (playerData) {
+        flatPlayerData = flattenData(playerData);
+
+        let count = 0;
+        for (const area of mapList) {
+            if (flatPlayerData?.[area.flag] === true) {
+                count++;
+            }
+        }
+
+        unlockedMapCount = count;
+    }
 
     export {unlockedMapCount, totalAreaMaps}
 </script>

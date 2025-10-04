@@ -2,7 +2,7 @@
     export let playerData = {};
     export let sceneData = {};
     import { memoryLocketList } from "$lib/gameData";
-    import { getLocationUrl } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
 
     function foundMemoryLocket(locket, playerData, sceneData) {
         if (!playerData || !locket.flag || !sceneData) return false;
@@ -34,24 +34,46 @@
         return false;
     }
 
-    $: collectedMemoryLocketsCount = memoryLocketList.filter((locket) => foundMemoryLocket(locket, playerData, sceneData)).length;
-    $: totalMemoryLockets = memoryLocketList.length;
+    let flatPlayerData = {};
+    let flatSceneData = {};
+    let collectedMemoryLocketsCount = 0;
+    let totalMemoryLockets = memoryLocketList.length;
+    $: {
+        flatPlayerData = flattenData(playerData);
+        flatSceneData = flattenData(sceneData);
+        let count = 0;
+        for (const locket of memoryLocketList) {
+            if (
+                foundMemoryLocket(locket, flatPlayerData, flatSceneData) ===
+                true
+            ) {
+                count++;
+            }
+        }
+        collectedMemoryLocketsCount = count;
+    }
 
     export { collectedMemoryLocketsCount, totalMemoryLockets };
 </script>
 
-
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
-                <div class="col-span-2 flex flex-col items-center mt-4">
-            <h1 class="text-2xl font-bold text-center">Collected Memory Lockets</h1>
+        <div class="col-span-2 flex flex-col items-center mt-4">
+            <h1 class="text-2xl font-bold text-center">
+                Collected Memory Lockets
+            </h1>
             <p class="text-sm text-gray-400 mt-1">
-                Collected: <span class="text-green-400 font-semibold">{collectedMemoryLocketsCount}</span> / {totalMemoryLockets}%
+                Collected: <span class="text-green-400 font-semibold"
+                    >{collectedMemoryLocketsCount}</span
+                >
+                / {totalMemoryLockets}%
             </p>
         </div>
 
         {#each memoryLocketList as locket}
-            <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">
+            <div
+                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700"
+            >
                 <span class="flex items-center gap-2">
                     {#if foundMemoryLocket(locket, playerData, sceneData)}
                         <span class="text-green-400 text-lg">✅</span>
@@ -77,4 +99,3 @@
         {/each}
     </div>
 </div>
-

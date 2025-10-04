@@ -3,7 +3,7 @@
     export let playerData = {};
 
     import { simpleKeysList } from "$lib/gameData";
-    import { getLocationUrl } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
 
     function isSimpleKeyUnlocked(key, playerData, sceneData) {
         if (!key.flag || !playerData || !sceneData) return false;
@@ -24,14 +24,25 @@
         }
     }
 
-    
-    $: collectedSimpleKeyCount = simpleKeysList.filter((key) =>
-        isSimpleKeyUnlocked(key, playerData, sceneData)
-    ).length;
+    let flatPlayerData = {};
+    let flatSceneData = {};
 
-    $: totalKeys = simpleKeysList.length;
+    let acquiredSimpleKeyCount = 0;
+    let totalSimpleKeys = simpleKeysList.length;
 
-    export { collectedSimpleKeyCount, totalKeys };
+    $: if (playerData) {
+        flatPlayerData = flattenData(playerData);
+        flatSceneData = flattenData(sceneData);
+        let count = 0;
+        for (const key of simpleKeysList) {
+            if (isSimpleKeyUnlocked(key, flatPlayerData, flatSceneData) === true) {
+                count++;
+            }
+        }
+        acquiredSimpleKeyCount = count;
+    }
+
+    export { acquiredSimpleKeyCount, totalSimpleKeys };
 </script>
 
 <div class="flex justify-center items-center">
@@ -39,7 +50,7 @@
         <div class="col-span-2 flex flex-col items-center mt-4">
             <h1 class="text-2xl font-bold text-center">Collected Simple Keys</h1>
             <p class="text-sm text-gray-400 mt-1">
-                Collected: <span class="text-green-400 font-semibold">{collectedSimpleKeyCount}</span> / {totalKeys}%
+                Collected: <span class="text-green-400 font-semibold">{acquiredSimpleKeyCount}</span> / {totalSimpleKeys}%
             </p>
         </div>
 

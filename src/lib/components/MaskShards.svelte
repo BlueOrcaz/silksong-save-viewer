@@ -2,7 +2,7 @@
     export let playerData = {};
     export let sceneData = {};
 
-    import { getLocationUrl } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
     import { maskShardList } from "$lib/gameData";
 
     function unlockedMaskShard(mask, playerData, sceneData) {
@@ -34,11 +34,28 @@
             );
         }
     }
+    let flatPlayerData = {};
+    let flatSceneData = {};
+    let unlockedMaskShardCount = 0;
+    let totalMasks = maskShardList.length;
 
-    $: unlockedMaskShardCount = maskShardList.filter((mask) =>
-        unlockedMaskShard(mask, playerData, sceneData)
-    ).length;
-    $: totalMasks = maskShardList.length;
+    $: if (playerData) {
+        flatPlayerData = flattenData(playerData);
+        flatSceneData = flattenData(sceneData);
+        let count = 0;
+        for (const mask of maskShardList) {
+            if (
+                unlockedMaskShard(
+                    mask,
+                    flatPlayerData,
+                    flatSceneData,
+                ) === true
+            ) {
+                count++;
+            }
+        }
+        unlockedMaskShardCount = count;
+    }
 
     export { unlockedMaskShardCount, totalMasks };
 </script>

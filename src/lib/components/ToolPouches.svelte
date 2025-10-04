@@ -3,8 +3,7 @@
     export let playerData = {};
 
     import { toolPouchList } from "$lib/gameData";
-    import { onMount } from "svelte";
-    import { getLocationUrl } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
 
     function unlockedToolPouch(pouch, playerData, sceneData) {
         if (!pouch.flag || !sceneData || !playerData) return false;
@@ -32,11 +31,39 @@
                 return false;
         }
     }
+
+    let flatPlayerData = {};
+    let flatSceneData = {};
+    let unlockedToolPouchCount = 0;
+    let totalToolPouches = toolPouchList.length;
+
+    $: if (playerData && sceneData) {
+        flatPlayerData = flattenData(playerData);
+        flatSceneData = flattenData(sceneData);
+
+        let count = 0;
+        for (const pouch of toolPouchList) {
+            if (unlockedToolPouch(pouch, flatPlayerData, flatSceneData) === true) {
+                count++;
+            }
+        }
+
+        unlockedToolPouchCount = count;
+    }
 </script>
 
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Unlocked Tool Pouches</h1>
+                <div class="col-span-2 flex flex-col items-center mt-4">
+            <h1 class="text-2xl font-bold text-center">Unlocked Tool Pouches (WIP)</h1>
+            <p class="text-sm text-gray-400 mt-1">
+                Unlocked: 
+                <span class="text-green-400 font-semibold">
+                    {unlockedToolPouchCount}
+                </span>
+                / {totalToolPouches}
+            </p>
+        </div>
 
         {#each toolPouchList as pouch}
             <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">

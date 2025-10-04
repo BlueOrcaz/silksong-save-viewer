@@ -1,6 +1,6 @@
 <script>
     import { ToolList } from "$lib/gameData";
-    import { getLocationUrl } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
     export let playerData = {};
 
     function isToolUnlocked(playerData, toolName) {
@@ -9,10 +9,37 @@
         );
         return tool?.Data?.IsUnlocked ?? false;
     }
+
+    let flatPlayerData = {};
+    let unlockedToolsCount = 0;
+    let totalToolCount = ToolList.length;
+    $: if (playerData) {
+        flatPlayerData = flattenData(playerData);
+        let count = 0;
+        for (const tool of ToolList) {
+            if (isToolUnlocked(flatPlayerData, tool.saveName) === true) {
+                count++;
+            }
+        }
+
+        unlockedToolsCount = count;
+    }
+
+    export { unlockedToolsCount, totalToolCount };
 </script>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
-    <h1 class="col-span-1 md:col-span-2 lg:col-span-3 text-2xl font-bold text-center mt-4">Unlocked Tools</h1>
+            <div class="col-span-2 flex flex-col items-center mt-4">
+            <h1 class="text-2xl font-bold text-center">Unlocked Tools</h1>
+            <p class="text-sm text-gray-400 mt-1">
+                Unlocked: 
+                <span class="text-green-400 font-semibold">
+                    {unlockedToolsCount}
+                </span>
+                / {totalToolCount}
+            </p>
+        </div>
+
 
     {#each ToolList as tool}
         <div class="flex-col flex justify-between text-center items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">

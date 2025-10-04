@@ -2,6 +2,7 @@
     export let playerData = {};
     export let sceneData = {};
     import { spoolFragmentList } from "$lib/gameData";
+    import { flattenData } from "$lib/utils";
 
     function unlockedSpoolFragment(spool, playerData, sceneData) {
         if (!playerData || !spool.flag) return false;
@@ -27,11 +28,40 @@
             );
         }
     }
+
+    let flatPlayerData = {};
+    let flatSceneData = {};
+
+    let unlockedSpoolFragmentCount = 0;
+    let totalSpoolFragments = 0;
+
+    $: if (playerData && sceneData) {
+        flatPlayerData = flattenData(playerData);
+        flatSceneData = flattenData(sceneData);
+
+        let count = 0;
+        for (const spool of spoolFragmentList) {
+            if (unlockedSpoolFragment(spool, flatPlayerData, flatSceneData) === true) {
+                count++;
+            }
+        }
+
+        unlockedSpoolFragmentCount = count;
+    }
 </script>
 
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Unlocked Spool Fragments</h1>
+                <div class="col-span-2 flex flex-col items-center mt-4">
+            <h1 class="text-2xl font-bold text-center">Unlocked Spool Fragments</h1>
+            <p class="text-sm text-gray-400 mt-1">
+                Unlocked: 
+                <span class="text-green-400 font-semibold">
+                    {unlockedSpoolFragmentCount}
+                </span>
+                / {totalSpoolFragments}
+            </p>
+        </div>
 
         {#each spoolFragmentList as spool}
             <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">

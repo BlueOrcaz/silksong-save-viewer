@@ -1,5 +1,5 @@
 <script>
-    import { getLocationUrl } from "$lib/utils";
+    import { getLocationUrl, flattenData } from "$lib/utils";
     import { craftingKitUpgradeList } from "$lib/gameData";
     export let playerData = {};
 
@@ -20,9 +20,20 @@
         return false;
     }
 
-    $: craftingKitUpgradeCount = craftingKitUpgradeList.filter((kit) =>
-        unlockedCraftingKit(kit, playerData)).length;
-    $: totalCraftingKitUpgrades = craftingKitUpgradeList.length;
+    let flatData = {};
+    let craftingKitUpgradeCount = 0;
+    let totalCraftingKitUpgrades = craftingKitUpgradeList.length;
+
+    $: if (playerData) {
+        flatData = flattenData(playerData);
+        let count = 0;
+        for (const kit of craftingKitUpgradeList) {
+            if (unlockedCraftingKit(kit, flatData) === true) {
+                count++;
+            } 
+        }
+        craftingKitUpgradeCount = count;
+    }
 
     export { craftingKitUpgradeCount, totalCraftingKitUpgrades };
 </script>

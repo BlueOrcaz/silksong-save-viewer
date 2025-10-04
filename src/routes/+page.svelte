@@ -67,12 +67,11 @@
   const tabs = [
     { name: "Save Info", components: [SaveInfo, Completionist] },
     { name: "Bosses", components: [Bosses] },
-    { name: "Crests", components: [Crests, MemoryLockets, CraftMetal] },
+    { name: "Crests", components: [Crests] },
     {
       name: "Upgrades",
       components: [
         NeedleUpgrade,
-        PaleOil,
         CraftingKitUpgrade,
         ToolPouches,
         MaskShards,
@@ -87,7 +86,7 @@
       components: [AreaMaps, BellwayStations, VentricaStations],
     },
     { name: "Tools", components: [Tools] },
-    { name: "Collectables", components: [FleaLocations, SimpleKeys, CraftMetal] },
+    { name: "Collectables", components: [FleaLocations, SimpleKeys, CraftMetal, PaleOil, MemoryLockets, CraftMetal] },
   ];
 
   $: currentComponents =

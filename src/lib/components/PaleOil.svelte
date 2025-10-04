@@ -3,7 +3,7 @@
     export let sceneData = {};
 
     import { paleOilList } from "$lib/gameData";
-    import { getLocationUrl } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
 
 
     function foundPaleOil(oil, playerData, sceneData) {
@@ -27,11 +27,39 @@
             );
         }   
     }
+
+    let flatPlayerData = {};
+    let flatSceneData = {};
+    let paleOilCount = 0;
+    let totalPaleOil = paleOilList.length;
+
+    $: if(playerData && sceneData) {
+        flatPlayerData = flattenData(playerData);
+        flatSceneData = flattenData(sceneData);
+        let count = 0;
+        for (const oil of paleOilList) {
+            if (foundPaleOil(oil, flatPlayerData, flatSceneData)) {
+                count++;
+            }
+        }
+        paleOilCount = count;
+    }
+
+    export { paleOilCount, totalPaleOil }
 </script>
 
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
-        <h1 class="col-span-2 text-2xl font-bold text-center mt-4">Collected Pale Oil</h1>
+                <div class="col-span-2 flex flex-col items-center mt-4">
+            <h1 class="text-2xl font-bold text-center">Collected Pale Oil</h1>
+            <p class="text-sm text-gray-400 mt-1">
+                Collected: 
+                <span class="text-green-400 font-semibold">
+                    {paleOilCount}
+                </span>
+                / {totalPaleOil}%
+            </p>
+        </div>
 
         {#each paleOilList as oil}
             <div class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 ">

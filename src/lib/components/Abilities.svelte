@@ -1,9 +1,15 @@
 <script>
     export let playerData = {};
     import { abilityList } from "$lib/gameData";
-    import { flattenPlayerData } from "$lib/utils";
+    import { flattenData } from "$lib/utils";
 
-    $: {
+
+    let flatPlayerData = {}
+    let unlockedAbilityCount = 0;
+    let totalAbilities = abilityList.length;
+
+    $: if (playerData) {
+        flatPlayerData = flattenData(playerData)
         let count = 0;
         for (const ability of abilityList) {
             if (playerData?.[ability.flag] === true) {
@@ -11,7 +17,6 @@
             }
         }
         unlockedAbilityCount = count;
-        totalAbilities = abilityList.length;
     }
 
     export { unlockedAbilityCount, totalAbilities };

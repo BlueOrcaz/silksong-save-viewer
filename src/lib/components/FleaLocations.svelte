@@ -2,7 +2,7 @@
     export let playerData = {};
     export let sceneData = {};
 
-    import { getLocationUrl } from "$lib/utils";
+    import { getLocationUrl, flattenData } from "$lib/utils";
     import { fleaList } from "$lib/gameData";
 
     function foundFlea(flea, playerData, sceneData) {
@@ -38,8 +38,22 @@
         return false;
     }
 
-    $: fleaCount = fleaList.filter((flea) => foundFlea(flea, playerData, sceneData)).length;
-    $: totalFleas = fleaList.length;
+    let flatPlayerData = {};
+    let flatSceneData = {};
+
+    let fleaCount = 0;
+    let totalFleas = fleaList.length;
+    $: if (playerData) {
+        flatPlayerData = flattenData(playerData);
+        flatSceneData = flattenData(sceneData);
+        let count = 0;
+        for (const flea of fleaList) {
+            if (foundFlea(flea, flatPlayerData, flatSceneData) === true) {
+                count++;
+            }
+        }
+        fleaCount = count;
+    }
 
     export { fleaCount, totalFleas };
 </script>

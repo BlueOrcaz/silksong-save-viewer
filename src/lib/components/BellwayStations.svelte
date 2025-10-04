@@ -1,11 +1,25 @@
 <script>
     import { bellwayStationList } from "$lib/gameData";
     export let playerData = {};
-    import { getLocationUrl } from "$lib/utils";
+    import { getLocationUrl, flattenData } from "$lib/utils";
 
-    $: unlockedBellwayStationCount = bellwayStationList.filter(
-        (station) => playerData?.[station.flag] === true).length;
-    $: totalBellwayStations = bellwayStationList.length;
+    let flatPlayerData = {};
+    let unlockedBellwayStationCount = 0;
+    let totalBellwayStations = bellwayStationList.length;
+
+    $: if (playerData) {
+        flatPlayerData = flattenData(playerData);
+
+        let count = 0;
+        for (const station of bellwayStationList) {
+            if (flatPlayerData?.[station.flag] === true) {
+                count++;
+            }
+        }
+
+        unlockedBellwayStationCount = count;
+    }
+
 
     export { unlockedBellwayStationCount, totalBellwayStations };
 </script>

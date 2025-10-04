@@ -4,6 +4,6 @@ export function getLocationUrl(id) {
         : null;
 }
 
-export function flattenPlayerData(playerData) {
+export function flattenData(playerData) {
     return JSON.parse(JSON.stringify(playerData ?? {}));
 }
