@@ -10,7 +10,7 @@
         return enemyList.some(
             (entry) =>
                 entry.Name === enemy.saveName &&
-                entry.Record?.HasBeenSeen === true,
+                entry.Record?.Kills > 0,
         );
     }
 
