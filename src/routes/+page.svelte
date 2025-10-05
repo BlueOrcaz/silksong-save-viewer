@@ -1,6 +1,6 @@
 <script>
+  import { injectAnalytics } from '@vercel/analytics/sveltekit'
   import background from "../static/Background.jpg";
-
   import FileUpload from "$lib/components/FileUpload.svelte";
   import { decodeFile } from "$lib/decodeSaveFile";
 
