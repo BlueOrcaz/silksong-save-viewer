@@ -100,6 +100,16 @@
       <h1>Save Completion Analyser for Hollow Knight: Silksong</h1>
     </div>
 
+    <div class="w-full flex flex-col items-center text-center px-6 mb-6">
+      <p class="text-lg text-gray-300 max-w-2xl">
+        Upload your <span class="font-semibold text-white">Silksong save file</span> to analyze your game progress, 
+        view collected items, defeated bosses, and completion stats in detail.
+      </p>
+      <p class="text-sm text-gray-400 mt-2 italic">
+        (Warning: Spoilers for Hollow Knight Silksong will be shown.)
+      </p>
+    </div>
+
     <div class="w-full flex justify-center items-center mb-8">
       <FileUpload on:fileLoaded={handleFile} />
     </div>
@@ -134,4 +144,27 @@
       </div>
     </div>
   </div>
+
+  <footer class="mt-12 py-6 w-full bg-gray-900 bg-opacity-80 text-center text-gray-400 text-sm">
+  <p>
+    Created by 
+    <a 
+      href="https://github.com/BlueOrcaz" 
+      target="_blank" 
+      class="text-blue-400 hover:text-blue-300 transition-colors"
+    >
+      @BlueOrcaz
+    </a>
+  </p>
+  <p class="mt-2">
+    Support me on 
+    <a 
+      href="https://ko-fi.com/BlueOrcaz" 
+      target="_blank" 
+      class="text-pink-400 hover:text-pink-300 transition-colors"
+    >
+      Ko-fi ☕
+    </a>
+  </p>
+</footer>
 </div>
