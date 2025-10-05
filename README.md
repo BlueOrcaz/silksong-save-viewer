@@ -1,5 +1,7 @@
 # Hollow Knight Silksong Save Analyser
-- This is a tool which checks your save file's progress! 
+- This is a tool which checks your save file's progress!
+
+Made in SvelteKit by [@BlueOrcaz](https://github.com/BlueOrcaz)
 
 Website: https://silksong-save-viewer.vercel.app/
 
