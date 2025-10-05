@@ -51,6 +51,7 @@ Website: https://silksong-save-viewer.vercel.app/
 
 ## Coming Soon:
 - Tool Pouch #2
+- Track Collectable Rosaries and Shards
 
 ## Issues
 - If there are any issues, please create an issue request on this repository, or a pull request if you have the fix. 
