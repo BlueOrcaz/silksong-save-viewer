@@ -6,7 +6,8 @@
         boneScrollList, 
         choralCommandmentList, 
         weaverEffigyList, 
-        psalmCylinderList 
+        psalmCylinderList,
+        arcaneEgg
     } from "$lib/gameData";
     import { flattenData, getLocationUrl } from "$lib/utils";
 
@@ -29,7 +30,8 @@
         boneScrollList.length + 
         choralCommandmentList.length + 
         weaverEffigyList.length + 
-        psalmCylinderList.length;
+        psalmCylinderList.length +
+        arcaneEgg.length;
 
     let showNames = false;
     let hoveredIndex = null;
@@ -48,7 +50,8 @@
             ...boneScrollList,
             ...choralCommandmentList,
             ...weaverEffigyList,
-            ...psalmCylinderList
+            ...psalmCylinderList,
+            ...arcaneEgg
         ];
 
         for (const relic of allOtherRelics) {
@@ -126,7 +129,8 @@
             { title: "Bone Scrolls", list: boneScrollList },
             { title: "Choral Commandments", list: choralCommandmentList },
             { title: "Weaver Effigies", list: weaverEffigyList },
-            { title: "Psalm Cylinders", list: psalmCylinderList }
+            { title: "Psalm Cylinders", list: psalmCylinderList },
+            { title: "Arcane Eggs", list: arcaneEgg }
         ] as category}
             <div class="col-span-2 mt-6">
                 <h2 class="text-xl font-semibold text-center text-gray-200 mb-2">{category.title}</h2>

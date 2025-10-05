@@ -42,7 +42,7 @@ Website: https://silksong-save-viewer.vercel.app/
   - Mementos
   - Choral Commandments
   - Psalm Cylinders
-  - Other Collectables
+  - Arcane Egg
 - Gamepass/macOS/Linux File Upload Support
 - Hunter's Journal
   - Kill Count

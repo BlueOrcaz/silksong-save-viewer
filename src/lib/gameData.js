@@ -335,6 +335,10 @@ export const psalmCylinderList = [ // isCollected
     { name: "#6 Underworks", location: "478929", flag: "Psalm Cylinder Ward"  },
 ];
 
+export const arcaneEgg = [
+    { name: "The Abyss", location: "479281", flag: "Ancient Egg Abyss Middle"}
+]
+
 export const spoolFragmentList = [
     { name: "#1 Moss Grotto", location: "478080", flag: "Bone_11b", flagType: "scene" },
     { name: "#2 Deep Docks (1/2)", location: "477926", flag: "Bone_East_13", flagType: "scene" },
