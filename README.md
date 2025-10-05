@@ -1,38 +1,27 @@
-# sv
+# Hollow Knight Silksong Save Analyser
+- This is a tool which checks your save file's progress! 
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Website: https://silksong-save-viewer.vercel.app/
 
-## Creating a project
+## Tracks:
+- Save Information (Save Version, Game Completion Percentage, Time Played, Mask Shards, Silk Hearts, Rosaries, Shell Shards)
+- Defeated Bosses
+- Unlocked Crests
+- Needle Upgrades, Crafting Kits, Tool Pouches, Mask Shards, Spool Fragments, Abilities, Silk Skills
+- Objectives/Quests
+- Unlocked Maps, Bellway Stations, Ventrica Stations
+- Unlocked Tools
+- Collectables (Fleas, Simple Keys, Craftmetal, Pale Oil, Memory Lockets)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Coming Soon:
+- Hunter's Journal
+- Remaining Keys
+- Tool Pouch
+- Gamepass/macOS/Linux Support
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Issues
+- If there are any issues, please create an issue request on this repository, or a pull request if you have the fix. 
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Credits
+- Decryption code from: https://reznormichael.github.io/hollow-knight-completion-check/
+- 100% Completion Post: https://www.reddit.com/r/Silksong/comments/1ng54do/list_of_requirements_to_get_100_completion/
