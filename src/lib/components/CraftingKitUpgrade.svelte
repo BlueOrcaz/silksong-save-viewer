@@ -23,6 +23,8 @@
     let flatData = {};
     let craftingKitUpgradeCount = 0;
     let totalCraftingKitUpgrades = craftingKitUpgradeList.length;
+    let showNames = false;
+    let hoveredIndex = null;
 
     $: if (playerData) {
         flatData = flattenData(playerData);
@@ -30,7 +32,7 @@
         for (const kit of craftingKitUpgradeList) {
             if (unlockedCraftingKit(kit, flatData) === true) {
                 count++;
-            } 
+            }
         }
         craftingKitUpgradeCount = count;
     }
@@ -41,26 +43,44 @@
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
         <div class="col-span-2 flex flex-col items-center mt-4">
-            <h1 class="text-3xl font-bold text-center">Acquired Crafting Kits</h1>
+            <h1 class="text-3xl font-bold text-center">
+                Acquired Crafting Kits
+            </h1>
             <p class="text-sm text-gray-400 mt-1">
                 Unlocked: <span class="text-green-400 font-semibold"
                     >{craftingKitUpgradeCount}</span
                 >
                 / {totalCraftingKitUpgrades}
             </p>
+
+            <button
+                class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
+                on:click={() => (showNames = !showNames)}
+            >
+                {showNames ? "Hide Names" : "Show Names"}
+            </button>
         </div>
 
-        {#each craftingKitUpgradeList as kit}
+        {#each craftingKitUpgradeList as kit, i}
             <div
-                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-9"
+                role="group"
+                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 transition"
+                on:mouseenter={() => (hoveredIndex = i)}
+                on:mouseleave={() => (hoveredIndex = null)}
             >
                 <span class="flex items-center gap-2">
-                    {#if unlockedCraftingKit(kit, playerData)}
+                    {#if unlockedCraftingKit(kit, playerData, i)}
                         <span class="text-green-400 text-lg">✅</span>
                     {:else}
                         <span class="text-red-400 text-lg">❌</span>
                     {/if}
-                    <span class="font-medium">{kit.name}</span>
+                    <span
+                        class="font-medium transition duration-300 ease-in-out"
+                        class:blur-sm={!showNames && hoveredIndex !== i}
+                        class:text-gray-500={!showNames && hoveredIndex !== i}
+                    >
+                        {kit.name}
+                    </span>
                 </span>
 
                 {#if kit.location}

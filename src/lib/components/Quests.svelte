@@ -13,6 +13,9 @@
     let flatPlayerData = {};
     let completedQuestCount = 0;
     let totalQuests = questList.length;
+    let showNames = false;
+    let hoveredIndex = null;
+
     $: if (playerData) {
         flatPlayerData = flattenData(playerData);
 
@@ -30,26 +33,45 @@
 </script>
 
 <div class="w-full max-w-4xl mx-auto p-6">
-  <div class="flex flex-col items-center text-center mb-6">
-    <h1 class="text-3xl font-bold mb-2">Completed Wishes</h1>
-    <p class="text-sm text-gray-400">
-      Completed:
-      <span class="text-green-400 font-semibold">{completedQuestCount}</span>
-      / {totalQuests}
-    </p>
-  </div>
+    <div class="flex flex-col items-center text-center mb-6">
+        <h1 class="text-3xl font-bold mb-2">Completed Wishes</h1>
+        <p class="text-sm text-gray-400">
+            Completed:
+            <span class="text-green-400 font-semibold"
+                >{completedQuestCount}</span
+            >
+            / {totalQuests}
+        </p>
+
+        <button
+            class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
+            on:click={() => (showNames = !showNames)}
+        >
+            {showNames ? "Hide Names" : "Show Names"}
+        </button>
+    </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {#each questList as quest}
+        {#each questList as quest, i}
             <div
-                class="flex flex-col justify-between text-center items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 min-h-[25px]">
+                role="group"
+                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 transition"
+                on:mouseenter={() => (hoveredIndex = i)}
+                on:mouseleave={() => (hoveredIndex = null)}
+            >
                 <span class="flex items-center gap-2">
                     {#if isQuestCompleted(quest, playerData)}
                         <span class="text-green-400 text-lg">✅</span>
                     {:else}
                         <span class="text-red-400 text-lg">❌</span>
                     {/if}
-                    <span class="font-medium">{quest.name}</span>
+                    <span
+                        class="font-medium transition duration-300 ease-in-out"
+                        class:blur-sm={!showNames && hoveredIndex !== i}
+                        class:text-gray-500={!showNames && hoveredIndex !== i}
+                    >
+                        {quest.name}
+                    </span>
                 </span>
 
                 {#if quest.location}
@@ -68,4 +90,3 @@
         {/each}
     </div>
 </div>
-

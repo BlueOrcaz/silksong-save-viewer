@@ -38,6 +38,8 @@
     let flatSceneData = {};
     let collectedMemoryLocketsCount = 0;
     let totalMemoryLockets = memoryLocketList.length;
+    let showNames = false;
+    let hoveredIndex = null;
     $: {
         flatPlayerData = flattenData(playerData);
         flatSceneData = flattenData(sceneData);
@@ -68,11 +70,21 @@
                 >
                 / {totalMemoryLockets}
             </p>
+
+            <button
+                class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
+                on:click={() => (showNames = !showNames)}
+            >
+                {showNames ? "Hide Names" : "Show Names"}
+            </button>
         </div>
 
-        {#each memoryLocketList as locket}
+        {#each memoryLocketList as locket, i}
             <div
-                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-5"
+                role="group"
+                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 transition"
+                on:mouseenter={() => (hoveredIndex = i)}
+                on:mouseleave={() => (hoveredIndex = null)}
             >
                 <span class="flex items-center gap-2">
                     {#if foundMemoryLocket(locket, playerData, sceneData)}
@@ -80,7 +92,14 @@
                     {:else}
                         <span class="text-red-400 text-lg">❌</span>
                     {/if}
-                    <span class="font-medium">{locket.name}</span>
+
+                    <span
+                        class="font-medium transition duration-300 ease-in-out"
+                        class:blur-sm={!showNames && hoveredIndex !== i}
+                        class:text-gray-500={!showNames && hoveredIndex !== i}
+                    >
+                        {locket.name}
+                    </span>
                 </span>
 
                 {#if locket.location}

@@ -36,6 +36,8 @@
     }
     let flatPlayerData = {};
     let flatSceneData = {};
+    let showNames = false;
+    let hoveredIndex = null;
     let unlockedMaskShardCount = 0;
     let totalMasks = maskShardList.length;
 
@@ -45,11 +47,7 @@
         let count = 0;
         for (const mask of maskShardList) {
             if (
-                unlockedMaskShard(
-                    mask,
-                    flatPlayerData,
-                    flatSceneData,
-                ) === true
+                unlockedMaskShard(mask, flatPlayerData, flatSceneData) === true
             ) {
                 count++;
             }
@@ -70,11 +68,21 @@
                 >
                 / {totalMasks}
             </p>
+
+            <button
+                class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
+                on:click={() => (showNames = !showNames)}
+            >
+                {showNames ? "Hide Names" : "Show Names"}
+            </button>
         </div>
 
-        {#each maskShardList as mask}
+        {#each maskShardList as mask, i}
             <div
-                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700"
+                role="group"
+                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 transition"
+                on:mouseenter={() => (hoveredIndex = i)}
+                on:mouseleave={() => (hoveredIndex = null)}
             >
                 <span class="flex items-center gap-2">
                     {#if unlockedMaskShard(mask, playerData, sceneData)}
@@ -82,7 +90,13 @@
                     {:else}
                         <span class="text-red-400 text-lg">❌</span>
                     {/if}
-                    <span class="font-medium">{mask.name}</span>
+                    <span
+                        class="font-medium transition duration-300 ease-in-out"
+                        class:blur-sm={!showNames && hoveredIndex !== i}
+                        class:text-gray-500={!showNames && hoveredIndex !== i}
+                    >
+                        {mask.name}
+                    </span>
                 </span>
 
                 {#if mask.location}

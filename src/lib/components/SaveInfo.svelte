@@ -2,7 +2,6 @@
   export let saveVersion;
   export let timePlayed;
   export let maskShards;
-  //export let maxSilk;
   export let rosaries;
   export let shellShards;
   export let silkHearts;

@@ -17,6 +17,9 @@
   let unlockedCrestCount = 0;
   let totalCrests = crestList.length + vesticrestList.length;
 
+  let showNames = false;
+  let hoveredIndex = null;
+
   $: if (playerData) {
     flatPlayerData = flattenData(playerData);
 
@@ -48,12 +51,23 @@
       <span class="text-green-400 font-semibold">{unlockedCrestCount}</span>
       / {totalCrests}
     </p>
+
+    <button
+      class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
+      on:click={() => (showNames = !showNames)}
+    >
+      {showNames ? "Hide Names" : "Show Names"}
+    </button>
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-    {#each crestList as crest}
+    <!-- Regular Crests -->
+    {#each crestList as crest, i}
       <div
-        class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-5"
+        role="group"
+        class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 transition"
+        on:mouseenter={() => (hoveredIndex = i)}
+        on:mouseleave={() => (hoveredIndex = null)}
       >
         <span class="flex items-center gap-2">
           {#if isCrestUnlocked(crest, playerData)}
@@ -61,7 +75,13 @@
           {:else}
             <span class="text-red-400 text-lg">❌</span>
           {/if}
-          <span class="font-medium">{crest.name}</span>
+          <span
+            class="font-medium transition duration-300 ease-in-out"
+            class:blur-sm={!showNames && hoveredIndex !== i}
+            class:text-gray-500={!showNames && hoveredIndex !== i}
+          >
+            {crest.name}
+          </span>
         </span>
 
         {#if crest.location}
@@ -77,9 +97,12 @@
       </div>
     {/each}
 
-    {#each vesticrestList as vesticrest}
+    {#each vesticrestList as vesticrest, j}
       <div
-        class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-2"
+        role="group"
+        class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-2 transition"
+        on:mouseenter={() => (hoveredIndex = crestList.length + j)}
+        on:mouseleave={() => (hoveredIndex = null)}
       >
         <span class="flex items-center gap-2">
           {#if playerData?.[vesticrest.flag]}
@@ -87,7 +110,14 @@
           {:else}
             <span class="text-red-400 text-lg">❌</span>
           {/if}
-          <span class="font-medium">{vesticrest.name}</span>
+          <span
+            class="font-medium transition duration-300 ease-in-out"
+            class:blur-sm={!showNames && hoveredIndex !== crestList.length + j}
+            class:text-gray-500={!showNames &&
+              hoveredIndex !== crestList.length + j}
+          >
+            {vesticrest.name}
+          </span>
         </span>
 
         {#if vesticrest.location}

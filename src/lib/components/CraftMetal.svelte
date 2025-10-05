@@ -29,15 +29,19 @@
     let flatSceneData = {};
     let craftMetalCount = 0;
     let totalCraftMetal = craftMetalList.length;
+    let showNames = false;
+    let hoveredIndex = null;
 
-    $: if (playerData) { 
+    $: if (playerData) {
         flatPlayerData = flattenData(playerData);
         flatSceneData = flattenData(sceneData);
         let count = 0;
         for (const metal of craftMetalList) {
-            if (isCraftMetalFound(metal, flatPlayerData, flatSceneData) === true) {
+            if (
+                isCraftMetalFound(metal, flatPlayerData, flatSceneData) === true
+            ) {
                 count++;
-            } 
+            }
         }
         craftMetalCount = count;
     }
@@ -48,18 +52,30 @@
 <div class="flex justify-center items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
         <div class="col-span-2 flex flex-col items-center mt-4">
-            <h1 class="text-3xl font-bold text-center">Collected Craft Metal</h1>
+            <h1 class="text-3xl font-bold text-center">
+                Collected Craft Metal
+            </h1>
             <p class="text-sm text-gray-400 mt-1">
                 Collected: <span class="text-green-400 font-semibold"
                     >{craftMetalCount}</span
                 >
                 / {totalCraftMetal}
             </p>
+
+            <button
+                class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
+                on:click={() => (showNames = !showNames)}
+            >
+                {showNames ? "Hide Names" : "Show Names"}
+            </button>
         </div>
 
-        {#each craftMetalList as metal}
+        {#each craftMetalList as metal, i}
             <div
-                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 gap-9"
+                role="group"
+                class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 transition"
+                on:mouseenter={() => (hoveredIndex = i)}
+                on:mouseleave={() => (hoveredIndex = null)}
             >
                 <span class="flex items-center gap-2">
                     {#if isCraftMetalFound(metal, playerData, sceneData)}
@@ -67,7 +83,14 @@
                     {:else}
                         <span class="text-red-400 text-lg">❌</span>
                     {/if}
-                    <span class="font-medium">{metal.name}</span>
+
+                    <span
+                        class="font-medium transition duration-300 ease-in-out"
+                        class:blur-sm={!showNames && hoveredIndex !== i}
+                        class:text-gray-500={!showNames && hoveredIndex !== i}
+                    >
+                        {metal.name}
+                    </span>
                 </span>
 
                 {#if metal.location}
