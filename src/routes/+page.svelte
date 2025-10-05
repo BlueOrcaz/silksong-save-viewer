@@ -21,10 +21,15 @@
   import PaleOil from "$lib/components/PaleOil.svelte";
   import FleaLocations from "$lib/components/FleaLocations.svelte";
   import ToolPouches from "$lib/components/ToolPouches.svelte";
-  import SimpleKeys from "$lib/components/SimpleKeys.svelte";
   import SilkSkills from "$lib/components/SilkSkills.svelte";
   import Abilities from "$lib/components/Abilities.svelte";
   import CraftMetal from "$lib/components/CraftMetal.svelte";
+  import HuntersJournal from "$lib/components/HuntersJournal.svelte";
+  import SimpleKeys from "$lib/components/SimpleKeys.svelte";
+  import MiscKeys from "$lib/components/MiscKeys.svelte";
+  import Mementos from "$lib/components/Mementos.svelte";
+  import Relics from "$lib/components/Relics.svelte";
+
   let decodedResult = null;
 
   // default values
@@ -86,7 +91,8 @@
       components: [AreaMaps, BellwayStations, VentricaStations],
     },
     { name: "Tools", components: [Tools] },
-    { name: "Collectables", components: [FleaLocations, SimpleKeys, CraftMetal, PaleOil, MemoryLockets] },
+    { name: "Collectables", components: [FleaLocations, SimpleKeys, MiscKeys, CraftMetal, PaleOil, MemoryLockets, Mementos, Relics] },
+    { name: "Hunter's Journal", components: [HuntersJournal] },
   ];
 
   $: currentComponents =

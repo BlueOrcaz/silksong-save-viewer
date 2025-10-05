@@ -63,7 +63,6 @@
 
     function copyPath() {
         if (modes[selectedMode].redirect) {
-            // Redirect to Steam Cloud
             window.open(modes[selectedMode].redirect, "_blank");
         } else if (fileExplorerText) {
             navigator.clipboard.writeText(fileExplorerText).then(() => {
@@ -78,7 +77,6 @@
 </script>
 
 <div class="w-full max-w-2xl mx-auto space-y-4">
-    <!-- Mode selector -->
     <div class="flex flex-wrap justify-center gap-2">
         {#each Object.keys(modes) as mode}
             <button
@@ -90,7 +88,6 @@
         {/each}
     </div>
 
-    <!-- File path / redirect button -->
     <div class="text-center mb-3 border rounded-lg px-6 py-3 transition transform hover:scale-105 active:scale-95 relative">
         <button
             on:click={copyPath}
@@ -105,7 +102,6 @@
         {/if}
     </div>
 
-    <!-- Drag & Drop + Upload (only for local modes) -->
     {#if !modes[selectedMode].redirect}
     <div
         role="button"
