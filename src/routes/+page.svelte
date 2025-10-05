@@ -157,7 +157,7 @@
     </a>
   </p>
 
-    <p>
+    <p class="mt-2">
     <a 
       href="https://github.com/BlueOrcaz/silksong-save-viewer" 
       target="_blank" 
