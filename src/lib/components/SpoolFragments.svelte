@@ -2,7 +2,7 @@
     export let playerData = {};
     export let sceneData = {};
     import { spoolFragmentList } from "$lib/gameData";
-    import { flattenData } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
 
     function unlockedSpoolFragment(spool, playerData, sceneData) {
         if (!playerData || !spool.flag) return false;
@@ -35,7 +35,7 @@
     let unlockedSpoolFragmentCount = 0;
     let totalSpoolFragments = spoolFragmentList.length;
 
-    $: if (playerData && sceneData) {
+    $: if (playerData) {
         flatPlayerData = flattenData(playerData);
         flatSceneData = flattenData(sceneData);
 

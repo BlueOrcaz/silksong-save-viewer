@@ -16,6 +16,7 @@
   import CraftingKitUpgrade from "$lib/components/CraftingKitUpgrade.svelte";
   import SpoolFragments from "$lib/components/SpoolFragments.svelte";
   import Quests from "$lib/components/Quests.svelte";
+  import Objectives from "$lib/components/Objectives.svelte";
   import MaskShards from "$lib/components/MaskShards.svelte";
   import MemoryLockets from "$lib/components/MemoryLockets.svelte";
   import PaleOil from "$lib/components/PaleOil.svelte";
@@ -80,7 +81,7 @@
         SilkSkills
       ],
     },
-    { name: "Wishes", components: [Quests] },
+    { name: "Wishes", components: [Objectives, Quests] },
     {
       name: "Areas",
       components: [AreaMaps, BellwayStations, VentricaStations],

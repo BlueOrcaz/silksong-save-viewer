@@ -1,6 +1,6 @@
 <script>
     import { ventricaStationList } from "$lib/gameData";
-    import { flattenData } from "$lib/utils";
+    import { flattenData, getLocationUrl } from "$lib/utils";
     export let playerData = {};
     
     function isUnlocked(flag, playerData) {
