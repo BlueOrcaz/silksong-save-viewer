@@ -135,7 +135,7 @@ export const silkSkillsList = [
     { name: "Cross Stitch", location: "478371", flag: "hasParry" },
     { name: "Sharpdart", location: "479079", flag: "hasHarpoonDash" },
     { name: "Rune Rage", location: "479025", flag: "hasSilkBomb" },
-    { name: "Pale Nails", location: "479606", flag: "hasSilkCharge" },
+    { name: "Pale Nails", location: "479606", flag: "hasSilkBossNeedle" },
 ];
 
 export const ToolList = [
