@@ -156,6 +156,16 @@
       @BlueOrcaz
     </a>
   </p>
+
+    <p>
+    <a 
+      href="https://github.com/BlueOrcaz/silksong-save-viewer" 
+      target="_blank" 
+      class="text-blue-400 hover:text-blue-300 transition-colors"
+    >
+      GitHub Repository
+    </a>
+  </p>
   <p class="mt-2">
     Support me on 
     <a 
