@@ -3,7 +3,7 @@ export const abilityList = [
     { name: "Drifter's Cloak", location: "477971", flag: "hasBrolly" },
     { name: "Cling Grip", location: "478189", flag: "hasWalljump" },
     { name: "Needle Strike", location: "478510", flag: "hasChargeSlash" },
-    { name: "Clawline", location: "478714", flag: "hasQuill" },
+    { name: "Clawline", location: "478714", flag: "hasHarpoonDash" },
     { name: "Faydown Cloak", location: "479103", flag: "hasDoubleJump" },
     { name: "Silk Soar", location: "479288", flag: "hasSuperJump" },
     { name: "Sylphsong", location: "479654", flag: "HasSeenEvaHeal" },
@@ -133,7 +133,7 @@ export const silkSkillsList = [
     { name: "Silkspear", location: "477871", flag: "hasNeedleThrow" },
     { name: "Thread Storm", location: "478061", flag: "hasThreadSphere" },
     { name: "Cross Stitch", location: "478371", flag: "hasParry" },
-    { name: "Sharpdart", location: "479079", flag: "hasHarpoonDash" },
+    { name: "Sharpdart", location: "479079", flag: "hasSilkCharge" },
     { name: "Rune Rage", location: "479025", flag: "hasSilkBomb" },
     { name: "Pale Nails", location: "479606", flag: "hasSilkBossNeedle" },
 ];
