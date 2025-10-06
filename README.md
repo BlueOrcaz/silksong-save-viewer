@@ -36,6 +36,7 @@ Website: https://silksong-save-viewer.vercel.app/
   - Craftmetal
   - Pale Oil
   - Memory Lockets
+  - Mossberries
   - Bone Scrolls
   - Rune Harp
   - Weaver Effigy
