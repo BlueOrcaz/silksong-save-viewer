@@ -754,3 +754,14 @@ export const journalEntryList = [
     { name: 'Lost Lace', requiredKillCount: 1, saveName: 'Lost Lace', location: '480341' }
 ];
 
+export const mossBerryList = [
+    { name: "#1 Moss Grotto (1/5)", location: "476909", flag: "Tut_01b", flagType: "scene" },
+    { name: "#2 Moss Grotto (2/5)", location: "476900", flag: "Tut_02", flagType: "scene" },
+    { name: "#3 Moss Grotto (3/5)", location: "478141", flag: "bonetownAspidBerryCollected", flagType: "boolean" },
+    { name: "#4 Moss Grotto (4/5)", location: "477877", flag: "mosstownAspidBerryCollected", flagType: "boolean" },
+    { name: "#5 Moss Grotto (5/5)", location: "478237", flag: "bonegraveAspidBerryCollected", flagType: "boolean" },
+    { name: "#6 Weavenest Atla", location: "479069", flag: "Weave_03", flagType: "scene" },
+    { name: "#7 Memorium", location: "479108", flag: "Arborium_04", flagType: "scene" }, // Arborium_04, id is moss_berry_fruit
+
+    
+]

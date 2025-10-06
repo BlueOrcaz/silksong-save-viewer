@@ -29,6 +29,7 @@
   import MiscKeys from "$lib/components/MiscKeys.svelte";
   import Mementos from "$lib/components/Mementos.svelte";
   import Relics from "$lib/components/Relics.svelte";
+  import Mossberries from "$lib/components/Mossberries.svelte";
 
   let decodedResult = null;
 
@@ -91,7 +92,7 @@
       components: [AreaMaps, BellwayStations, VentricaStations],
     },
     { name: "Tools", components: [Tools] },
-    { name: "Collectables", components: [FleaLocations, SimpleKeys, MiscKeys, CraftMetal, PaleOil, MemoryLockets, Mementos, Relics] },
+    { name: "Collectables", components: [FleaLocations, SimpleKeys, MiscKeys, CraftMetal, PaleOil, MemoryLockets, Mossberries, Mementos, Relics] },
     { name: "Hunter's Journal", components: [HuntersJournal] },
   ];
 
