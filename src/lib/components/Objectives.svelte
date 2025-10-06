@@ -64,7 +64,7 @@
             / {totalObjectives}
         </p>
         <button
-            class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
+            class="mt-3 px-4 py-1.5 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition w-full sm:w-auto"
             on:click={() => (showNames = !showNames)}
         >
             {showNames ? "Hide Names" : "Show Names"}

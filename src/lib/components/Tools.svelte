@@ -41,12 +41,12 @@
             / {totalToolCount}
         </p>
 
-        <button
-            class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
-            on:click={() => (showNames = !showNames)}
-        >
-            {showNames ? "Hide Names" : "Show Names"}
-        </button>
+      <button
+        class="mt-3 px-4 py-1.5 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition w-full sm:w-auto"
+        on:click={() => (showNames = !showNames)}
+      >
+        {showNames ? "Hide Names" : "Show Names"}
+      </button>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

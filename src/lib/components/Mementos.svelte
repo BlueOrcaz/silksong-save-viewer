@@ -38,25 +38,23 @@
     export { acquiredMementoCount, totalMementos };
 </script>
 
-<div class="flex justify-center items-center">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl p-6">
-        <div class="col-span-2 flex flex-col items-center mt-4">
-            <h1 class="text-3xl font-bold text-center">
-                Collected Mementos
-            </h1>
-            <p class="text-sm text-gray-400 mt-1">
-                Collected: <span class="text-green-400 font-semibold"
+<div class="flex justify-center items-center w-full px-3 sm:px-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-4xl p-4 sm:p-6">
+    <div class="col-span-1 sm:col-span-2 flex flex-col items-center mt-2 sm:mt-4 text-center">
+      <h1 class="text-2xl sm:text-3xl font-bold">Mementos</h1>
+      <p class="text-sm text-gray-400 mt-1">
+        Collected: <span class="text-green-400 font-semibold"
                     >{acquiredMementoCount}</span
                 >
                 / {totalMementos}
             </p>
 
-            <button
-                class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
-                on:click={() => (showNames = !showNames)}
-            >
-                {showNames ? "Hide Names" : "Show Names"}
-            </button>
+      <button
+        class="mt-3 px-4 py-1.5 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition w-full sm:w-auto"
+        on:click={() => (showNames = !showNames)}
+      >
+        {showNames ? "Hide Names" : "Show Names"}
+      </button>
         </div>
 
         {#each mementoList as memento, i}

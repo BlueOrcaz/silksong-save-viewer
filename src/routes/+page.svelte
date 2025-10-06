@@ -1,5 +1,4 @@
 <script>
-  import background from "../static/Background.jpg";
   import FileUpload from "$lib/components/FileUpload.svelte";
   import { decodeFile } from "$lib/decodeSaveFile";
 
@@ -100,43 +99,51 @@
     tabs.find((tab) => tab.name === currentTab)?.components ?? [];
 </script>
 
-<div class="relative min-h-screen overflow-x-hidden">
+<div class="relative min-h-screen overflow-x-hidden text-white">
+  <!-- Background -->
   <div
-    class="fixed inset-0 bg-center bg-no-repeat bg-cover bg-[url('/src/static/Background.jpg')] scale-105 md:scale-100 -z-10">
+  class="fixed inset-0 bg-cover bg-center bg-no-repeat bg-[url('/Background.jpg')] scale-110 md:scale-100 -z-10"
+></div>
+
+
+
+  <!-- Header -->
+  <header class="w-full px-4 sm:px-10 pt-10 text-center">
+    <h1 class="text-2xl sm:text-3xl font-bold mb-4">
+      Save Completion Analyser for Hollow Knight: Silksong
+    </h1>
+    <p class="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
+      Upload your <span class="font-semibold text-white">Silksong save file</span> to analyze your game progress,
+      view collected items, defeated bosses, and completion stats in detail.
+    </p>
+    <p class="text-xs sm:text-sm text-gray-400 mt-2 italic">
+      (Warning: Spoilers for Hollow Knight Silksong will be shown.)
+    </p>
+  </header>
+
+  <div class="w-full flex justify-center items-center mt-8 px-4">
+    <FileUpload on:fileLoaded={handleFile} />
   </div>
 
-  <div class="text-white">
-    <div class="text-3xl p-10 w-full flex justify-center items-center">
-      <h1>Save Completion Analyser for Hollow Knight: Silksong</h1>
+
+  <div class="flex flex-col items-center mt-8 px-4 sm:px-6">
+    <div
+      class="rounded-xl p-2 flex flex-wrap justify-center gap-2 bg-gray-800/90 shadow-md backdrop-blur-sm"
+    >
+      {#each tabs as { name }}
+        <button
+          on:click={() => (currentTab = name)}
+          class="min-w-[110px] sm:min-w-[130px] text-sm sm:text-base px-4 py-2 rounded-lg transition-colors duration-150 
+          {currentTab === name ? 'bg-blue-600' : 'bg-gray-600 hover:bg-gray-700'}"
+        >
+          {name}
+        </button>
+      {/each}
     </div>
 
-    <div class="w-full flex flex-col items-center text-center px-6 mb-6">
-      <p class="text-lg text-gray-300 max-w-2xl">
-        Upload your <span class="font-semibold text-white">Silksong save file</span> to analyze your game progress,
-        view collected items, defeated bosses, and completion stats in detail.
-      </p>
-      <p class="text-sm text-gray-400 mt-2 italic">
-        (Warning: Spoilers for Hollow Knight Silksong will be shown.)
-      </p>
-    </div>
 
-    <div class="w-full flex justify-center items-center mb-8">
-      <FileUpload on:fileLoaded={handleFile} />
-    </div>
-
-    <div class="flex flex-col justify-center items-center">
-      <div class="rounded-xl p-2 flex flex-wrap justify-center bg-gray-800 text-white">
-        {#each tabs as { name }}
-          <button
-            on:click={() => (currentTab = name)}
-            class="m-1 px-4 py-2 rounded hover:bg-gray-700 transition {currentTab === name ? 'bg-blue-600' : 'bg-gray-600'}">
-            {name}
-          </button>
-        {/each}
-      </div>
-
-      <div class="w-full flex flex-col items-center">
-        {#each currentComponents as component}
+    <div class="flex flex-col items-center w-full max-w-5xl mt-6">
+      {#each currentComponents as component}
           <svelte:component
             this={component}
             {playerData}
@@ -150,42 +157,45 @@
             {silkHearts}
             {completionPercentage}
           />
-        {/each}
-      </div>
+      {/each}
     </div>
-
-    <footer class="mt-12 py-6 w-full bg-gray-900 bg-opacity-80 text-center text-gray-400 text-sm">
-      <p>
-        Created by
-        <a
-          href="https://github.com/BlueOrcaz"
-          target="_blank"
-          class="text-blue-400 hover:text-blue-300 transition-colors"
-        >
-          @BlueOrcaz
-        </a>
-      </p>
-
-      <p class="mt-2">
-        <a
-          href="https://github.com/BlueOrcaz/silksong-save-viewer"
-          target="_blank"
-          class="text-blue-400 hover:text-blue-300 transition-colors"
-        >
-          GitHub Repository
-        </a>
-      </p>
-      <p class="mt-2">
-        Support me on
-        <a
-          href="https://ko-fi.com/BlueOrcaz"
-          target="_blank"
-          class="text-pink-400 hover:text-pink-300 transition-colors"
-        >
-          Ko-fi ☕
-        </a>
-      </p>
-    </footer>
   </div>
+
+  <!-- Footer -->
+  <footer
+    class="mt-12 py-8 w-full bg-gray-900/80 text-center text-gray-400 text-sm px-4"
+  >
+    <p>
+      Created by
+      <a
+        href="https://github.com/BlueOrcaz"
+        target="_blank"
+        class="text-blue-400 hover:text-blue-300 transition-colors"
+      >
+        @BlueOrcaz
+      </a>
+    </p>
+
+    <p class="mt-2">
+      <a
+        href="https://github.com/BlueOrcaz/silksong-save-viewer"
+        target="_blank"
+        class="text-blue-400 hover:text-blue-300 transition-colors"
+      >
+        GitHub Repository
+      </a>
+    </p>
+    <p class="mt-2">
+      Support me on
+      <a
+        href="https://ko-fi.com/BlueOrcaz"
+        target="_blank"
+        class="text-pink-400 hover:text-pink-300 transition-colors"
+      >
+        Ko-fi ☕
+      </a>
+    </p>
+  </footer>
 </div>
+
 

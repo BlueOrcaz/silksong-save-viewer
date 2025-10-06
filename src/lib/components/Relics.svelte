@@ -1,13 +1,13 @@
 <script>
     export let playerData = {};
-    import { 
-        heartList, 
-        runeHarpList, 
-        boneScrollList, 
-        choralCommandmentList, 
-        weaverEffigyList, 
+    import {
+        heartList,
+        runeHarpList,
+        boneScrollList,
+        choralCommandmentList,
+        weaverEffigyList,
         psalmCylinderList,
-        arcaneEgg
+        arcaneEgg,
     } from "$lib/gameData";
     import { flattenData, getLocationUrl } from "$lib/utils";
 
@@ -18,18 +18,21 @@
     function isRelicCollected(relic, playerData) {
         const relicList = playerData?.Relics?.savedData ?? [];
         return relicList.some(
-            (entry) => entry.Name === relic.flag && entry.Data && entry.Data.IsCollected === true
+            (entry) =>
+                entry.Name === relic.flag &&
+                entry.Data &&
+                entry.Data.IsCollected === true,
         );
     }
 
     let flatData = {};
     let collectedRelics = 0;
-    let totalRelics = 
-        heartList.length + 
-        runeHarpList.length + 
-        boneScrollList.length + 
-        choralCommandmentList.length + 
-        weaverEffigyList.length + 
+    let totalRelics =
+        heartList.length +
+        runeHarpList.length +
+        boneScrollList.length +
+        choralCommandmentList.length +
+        weaverEffigyList.length +
         psalmCylinderList.length +
         arcaneEgg.length;
 
@@ -51,7 +54,7 @@
             ...choralCommandmentList,
             ...weaverEffigyList,
             ...psalmCylinderList,
-            ...arcaneEgg
+            ...arcaneEgg,
         ];
 
         for (const relic of allOtherRelics) {
@@ -69,13 +72,15 @@
         <div class="col-span-2 flex flex-col items-center mt-4">
             <h1 class="text-3xl font-bold text-center">Collected Relics</h1>
             <p class="text-sm text-gray-400 mt-1">
-                Collected: 
-                <span class="text-green-400 font-semibold">{collectedRelics}</span>
+                Collected:
+                <span class="text-green-400 font-semibold"
+                    >{collectedRelics}</span
+                >
                 / {totalRelics}
             </p>
 
             <button
-                class="mt-3 px-4 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition"
+                class="mt-3 px-4 py-1.5 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition w-full sm:w-auto"
                 on:click={() => (showNames = !showNames)}
             >
                 {showNames ? "Hide Names" : "Show Names"}
@@ -83,7 +88,9 @@
         </div>
 
         <div class="col-span-2 mt-6">
-            <h2 class="text-xl font-semibold text-center text-gray-200 mb-2">Hearts</h2>
+            <h2 class="text-xl font-semibold text-center text-gray-200 mb-2">
+                Hearts
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {#each heartList as heart, i}
                     <div
@@ -100,8 +107,10 @@
                             {/if}
                             <span
                                 class="font-medium transition duration-300 ease-in-out"
-                                class:blur-sm={!showNames && hoveredIndex !== `heart-${i}`}
-                                class:text-gray-500={!showNames && hoveredIndex !== `heart-${i}`}
+                                class:blur-sm={!showNames &&
+                                    hoveredIndex !== `heart-${i}`}
+                                class:text-gray-500={!showNames &&
+                                    hoveredIndex !== `heart-${i}`}
                             >
                                 {heart.name}
                             </span>
@@ -117,42 +126,48 @@
                                 View Map
                             </a>
                         {:else}
-                            <span class="text-xs text-gray-400 italic">Unknown</span>
+                            <span class="text-xs text-gray-400 italic"
+                                >Unknown</span
+                            >
                         {/if}
                     </div>
                 {/each}
             </div>
         </div>
 
-        {#each [
-            { title: "Rune Harps", list: runeHarpList },
-            { title: "Bone Scrolls", list: boneScrollList },
-            { title: "Choral Commandments", list: choralCommandmentList },
-            { title: "Weaver Effigies", list: weaverEffigyList },
-            { title: "Psalm Cylinders", list: psalmCylinderList },
-            { title: "Arcane Eggs", list: arcaneEgg }
-        ] as category}
+        {#each [{ title: "Rune Harps", list: runeHarpList }, { title: "Bone Scrolls", list: boneScrollList }, { title: "Choral Commandments", list: choralCommandmentList }, { title: "Weaver Effigies", list: weaverEffigyList }, { title: "Psalm Cylinders", list: psalmCylinderList }, { title: "Arcane Eggs", list: arcaneEgg }] as category}
             <div class="col-span-2 mt-6">
-                <h2 class="text-xl font-semibold text-center text-gray-200 mb-2">{category.title}</h2>
+                <h2
+                    class="text-xl font-semibold text-center text-gray-200 mb-2"
+                >
+                    {category.title}
+                </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {#each category.list as relic, i}
                         <div
                             role="group"
                             class="flex justify-between items-center bg-gray-800/60 p-3 rounded-2xl shadow border border-gray-700 transition"
-                            on:mouseenter={() => (hoveredIndex = `${category.title}-${i}`)}
+                            on:mouseenter={() =>
+                                (hoveredIndex = `${category.title}-${i}`)}
                             on:mouseleave={() => (hoveredIndex = null)}
                         >
                             <span class="flex items-center gap-2">
                                 {#if isRelicCollected(relic, playerData)}
-                                    <span class="text-green-400 text-lg">✅</span>
+                                    <span class="text-green-400 text-lg"
+                                        >✅</span
+                                    >
                                 {:else}
                                     <span class="text-red-400 text-lg">❌</span>
                                 {/if}
                                 <span
                                     class="font-medium transition duration-300 ease-in-out"
-                                    class:blur-sm={!showNames && hoveredIndex !== `${category.title}-${i}`}
-                                    class:text-gray-500={!showNames && hoveredIndex !== `${category.title}-${i}`}
+                                    class:blur-sm={!showNames &&
+                                        hoveredIndex !==
+                                            `${category.title}-${i}`}
+                                    class:text-gray-500={!showNames &&
+                                        hoveredIndex !==
+                                            `${category.title}-${i}`}
                                 >
                                     {relic.name}
                                 </span>
@@ -168,7 +183,9 @@
                                     View Map
                                 </a>
                             {:else}
-                                <span class="text-xs text-gray-400 italic">Unknown</span>
+                                <span class="text-xs text-gray-400 italic"
+                                    >Unknown</span
+                                >
                             {/if}
                         </div>
                     {/each}
