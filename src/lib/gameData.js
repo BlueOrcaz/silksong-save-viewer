@@ -219,10 +219,10 @@ export const bellwayStationList = [
 ];
 
 export const ventricaStationList = [
-    { name: "Terminus", location: "478426", flag: ["UnlockedArboriumTube", "UnlockedHangTube", "UnlockedSongTube", "UnlockedCityBellwayTube", "UnlockedUnderTube"] },
+    { name: "Terminus", location: "478426", flag: ["UnlockedArboriumTube", "UnlockedHangTube", "UnlockedSongTube", "UnlockedCityBellwayTube", "UnlockedUnderTube", "UnlockedEnclaveTube"] },
     { name: "Memorium", location: "478425", flag: "UnlockedArboriumTube" },
     { name: "High Halls", location: "478445", flag: "UnlockedHangTube" },
-    { name: "First Shrine", location: "478427", flag: "UnlockedArboriumTube" },
+    { name: "First Shrine", location: "478427", flag: "UnlockedEnclaveTube" },
     { name: "Choral Chambers", location: "478424", flag: "UnlockedSongTube" },
     { name: "Grand Bellway", location: "478376", flag: "UnlockedCityBellwayTube" },
     { name: "Underworks", location: "478422", flag: "UnlockedUnderTube" },
@@ -453,7 +453,7 @@ export const maskShardList = [
     { name: "#10 Shellwood", location: "478177", flag: "Shellwood_14", flagType: "scene" },
     { name: "#11 Weavenest Atla", location: "478233", flag: "Weave_05b", flagType: "scene" },
     { name: "#12 Blasted Steps", location: "478498", flag: "Coral_19b", flagType: "scene" },
-    { name: "#13 Choral Chambers", location: "478879", flag: "MerchantEnclaveSocket", flagType: "boolean" },
+    { name: "#13 Choral Chambers", location: "478879", flag: "MerchantEnclaveShellFragment", flagType: "boolean" },
     { name: "#14 Cogwork Core", location: "478615", flag: "Song_09", flagType: "scene" },
     { name: "#15 The Slab", location: "479001", flag: "Slab_17", flagType: "scene" },
     { name: "#16 Mount Fay (1/2)", location: "479038", flag: "Peak_04c", flagType: "scene" },
