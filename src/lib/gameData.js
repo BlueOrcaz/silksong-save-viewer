@@ -344,7 +344,7 @@ export const spoolFragmentList = [
     { name: "#2 Deep Docks (1/2)", location: "477926", flag: "Bone_East_13", flagType: "scene" },
     { name: "#3 Deep Docks (2/2)", location: "478825", flag: "Dock_03c", flagType: "scene" },
     { name: "#4 Choral Chambers", location: "479249", flag: "MerchantEnclaveSpoolPiece", flagType: "boolean" },
-    { name: "#5 Greymoor (2/2)", location: "478263", flag: "Greymoor_02", flagType: "scene" },
+    { name: "#5 Greymoor", location: "478263", flag: "Greymoor_02", flagType: "scene" },
     { name: "#6 Bellhart", location: "478347", flag: "PurchasedBelltownSpoolSegment", flagType: "boolean" },
     { name: "#7 Weavenest Atla", location: "478230", flag: "Weave_11", flagType: "scene" },
     { name: "#8 The Slab", location: "478475", flag: "Peak_01", flagType: "scene" },
@@ -762,6 +762,8 @@ export const mossBerryList = [
     { name: "#5 Moss Grotto (5/5)", location: "478237", flag: "bonegraveAspidBerryCollected", flagType: "boolean" },
     { name: "#6 Weavenest Atla", location: "479069", flag: "Weave_03", flagType: "scene" },
     { name: "#7 Memorium", location: "479108", flag: "Arborium_04", flagType: "scene" }, // Arborium_04, id is moss_berry_fruit
+];
 
+export const rosaryList = [
     
-]
+];
