@@ -103,7 +103,7 @@ export const mapList = [
     { name: "Wormways", location: "479523", flag: "HasCrawlMap" },
     { name: "Weavenest Atla", location: "478227", flag: "HasWeavehomeMap" },
     { name: "Blasted Steps", location: "479673", flag: "HasJudgeStepsMap" },
-    { name: "Sinner's Road", location: "479526", flag: "HasHangMap" },
+    { name: "Sinner's Road", location: "479526", flag: "HasDustpensMap" },
     { name: "Grand Gate", location: "478548", flag: "HasSongGateMap" },
     { name: "Underworks", location: "478551", flag: "HasCitadelUnderstoreMap" },
     { name: "Choral Chambers", location: "479733", flag: "HasCoralMap" },
