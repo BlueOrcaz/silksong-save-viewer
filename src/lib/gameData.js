@@ -498,7 +498,7 @@ export const fleaList = [
     { name: "#26 Sands of Karak", location: "478385", flag: "SavedFlea_Coral_24", flagType: "boolean" },
     { name: "#27 Shellwood", location: "478176", flag: "SavedFlea_Shellwood_03", flagType: "boolean" },
     { name: "#28 Memorium", location: "478413", flag: "tamedGiantFlea", flagType: "boolean" },
-    { name: "#29 Kratt NPC", location: "478271", flag: "Greymoor_24", flagType: "scene" }, // NPC Value two
+    { name: "#29 Kratt NPC", location: "478271", flag: "CaravanLechSaved", flagType: "boolean" }, // NPC Value two
     { name: "#30 Vog NPC", location: "479138", flag: "GLOBAL_SHARED", flagType: "scene" }, // ID Caravan Troupe Hunter
 ];
 
