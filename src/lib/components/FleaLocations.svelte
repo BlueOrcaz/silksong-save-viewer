@@ -29,7 +29,7 @@
                 (entry) =>
                     entry.SceneName === flea.flag &&
                     entry.ID === "NPC" &&
-                    entry.Value === 2,
+                    entry.Value >= 1,
             );
 
             return hasNPC || hasCaravanTroupeHunter;
