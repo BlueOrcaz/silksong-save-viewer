@@ -310,7 +310,7 @@ export const boneScrollList = [
     { name: "#1 Greymoor", location: "478142", flag: "Bone Record Greymoor_flooded_corridor" },
     { name: "#2 Underworks", location: "478553", flag: "Bone Record Understore_Map_Room" },
     { name: "#3 Wisp Thicket", location: "479150", flag: "Bone Record Wisp Top" },
-    { name: "#4 Far Fields", location: "478213", flag: "Bone Record Greymoor_flooded_corridor" },
+    { name: "#4 Far Fields", location: "478213", flag: "Bone Record Bone_East_14" },
 ];
 
 export const choralCommandmentList = [
@@ -408,7 +408,6 @@ export const questList = [
     { name: "Fine Pins", location: "478633", saveName: "Fine Pins" },
     { name: "The Wandering Merchant", location: "478634", saveName: "Save City Merchant" },
     { name: "The Lost Merchant", location: "479244", saveName: "Save City Merchant Bridge" },
-    { name: "My Missing Courier", location: "478207", saveName: "Save Courier Short" },
     { name: "My Missing Brother", location: "478798", saveName: "Save Courier Tall" },
     { name: "Balm for the Wounded", location: "478933", saveName: "Save Sherma" },
     { name: "Savage Beastfly", location: "478799", saveName: "Beastfly Hunt" },
